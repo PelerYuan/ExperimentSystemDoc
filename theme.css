@@ -200,9 +200,8 @@ body {
   background: var(--sidebar-background);
   color: var(--base-font-color);
   font-size: 13px;
-  margin-left: 8px;
   transition: all 0.2s;
-  vertical-align: middle;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
 }
 
 #theme-toggle:hover,

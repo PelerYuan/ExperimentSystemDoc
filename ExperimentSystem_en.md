@@ -141,5 +141,5 @@ To date, this project has been formally deployed and in operation in the experim
 
 <div style="text-align:center;"><img src="./ExperimentSystem.assets/dcf64484a6c90d2b0af9f955a0745be8.jpg" alt="dcf64484a6c90d2b0af9f955a0745be8" style="width:33%;" /></div>
 
-<center>Eyes or sunglasses?</center>
+<center>Glasses or sunglasses?</center>
 <br />

@@ -16,10 +16,20 @@
       max-width: 100%;
       height: auto;
     }
+    #doc-controls {
+      position: fixed;
+      top: 12px;
+      right: 16px;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
   </style>
 </head>
 <body>
   <div id="app">Loading...</div>
+  <div id="doc-controls"></div>
 
   <script>
     // Apply saved preferences before Docsify loads (prevents flash)
@@ -50,17 +60,7 @@
 
     function applyLang(lang) {
       localStorage.setItem('docsify-lang', lang);
-      var suffix = lang === 'zh' ? '_zh' : '_en';
-      window.__docsifyLangSuffix = suffix;
-      window.$docsify.loadSidebar = '_sidebar' + suffix + '.md';
-      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-      var btn = document.getElementById('lang-toggle');
-      if (btn) btn.textContent = lang === 'zh' ? 'English' : '中文';
-      var hash = window.location.hash.replace(/^#\//, '');
-      var newPage = hash
-        ? hash.replace(/_(en|zh)(\.md)/, suffix + '$2')
-        : 'ExperimentSystem' + suffix + '.md';
-      window.location.hash = '#/' + newPage;
+      window.location.reload();
     }
 
     window.$docsify = {
@@ -81,10 +81,9 @@
       auto2top: true,
       plugins: [
         function (hook) {
-          hook.doneEach(function () {
-            if (document.getElementById('theme-toggle')) return;
-            var nav = document.querySelector('.app-nav');
-            if (!nav) return;
+          hook.ready(function () {
+            var controls = document.getElementById('doc-controls');
+            if (!controls || document.getElementById('theme-toggle')) return;
 
             var themeBtn = document.createElement('button');
             themeBtn.id = 'theme-toggle';
@@ -96,8 +95,8 @@
             var currentLang = localStorage.getItem('docsify-lang') || 'en';
             langBtn.textContent = currentLang === 'zh' ? 'English' : '中文';
 
-            nav.prepend(langBtn);
-            nav.prepend(themeBtn);
+            controls.appendChild(themeBtn);
+            controls.appendChild(langBtn);
 
             themeBtn.addEventListener('click', function () {
               var t = document.documentElement.getAttribute('data-theme');
