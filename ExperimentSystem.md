@@ -133,17 +133,19 @@
 <div style="text-align:center;"><img src="./ExperimentSystem.assets/image-20251207175325077.png" alt="image-20251207175325077" style="width:33%;" /></div>
 
 <center>一开始总是一团糟的$#&</center>
+<br />
 
 <div style="text-align:center;"><img src="./ExperimentSystem.assets/71074a0ef4a581ed09c7efd27ff8b435.jpg" alt="71074a0ef4a581ed09c7efd27ff8b435" style="width:25%;" /></div>
 
 <center>这个硬件看起来并不是开源的……</center>
+<br />
 
 <div style="text-align:center;"><img src="./ExperimentSystem.assets/image-20251207175453683.png" alt="image-20251207175453683" style="width:33%;" /></div>
 
 <center>忙里偷闲，安装系统的时候听点音乐吧</center>
+<br />
 
 <div style="text-align:center;"><img src="./ExperimentSystem.assets/dcf64484a6c90d2b0af9f955a0745be8.jpg" alt="dcf64484a6c90d2b0af9f955a0745be8" style="width:33%;" /></div>
 
 <center>眼睛还是墨镜？</center>
-
-<center>三个月稳定运行达成！</center>
+<br />
