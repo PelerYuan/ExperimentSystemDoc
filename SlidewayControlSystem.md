@@ -8,7 +8,7 @@
 
 ## 2. 项目亮点展示
 
-![image-20251205164505709](./slideway.assets/image-20251205164505709.png)
+<div style="text-align:center;"><img src="./slideway.assets/image-20251205164505709.png" style="width:100%;" /></div>
 
 本项目提供了一整套系统的图形化编程环境，包含模块化编程区域，自动代码生成区（供高级用户调试和检查），以及运行结果区。提供滑轨状态实时监控和代码调试功能，同时支持项目的保存和导入。
 
@@ -64,7 +64,7 @@ flowchart TD
 
 ## 8. 用户界面与体验
 
-![image-20251205165251168](./slideway.assets/image-20251205165251168.png)
+<div style="text-align:center;"><img src="./slideway.assets/image-20251205165251168.png" style="width:100%;" /></div>
 
 1. 代码块菜单栏，提供基础的逻辑，循环，数学运算，字符串运算，变量，函数以及滑轨控制功能。
 2. 模块化编程区域，用户通过从菜单栏中拖拽模块进行组合排列进行编程。

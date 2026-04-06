@@ -8,7 +8,7 @@
 
 ## 2. 项目亮点展示
 
-<img src="./ThermalImageAnalysisSystem.assets/image-20260407021750202.png" alt="image-20260407021750202" style="width:50%;" />
+<div style="text-align:center;"><img src="./ThermalImageAnalysisSystem.assets/image-20260407021750202.png" alt="image-20260407021750202" style="width:50%;" /></div>
 
 本项目定义并提供了一套极度简化工作流，以最简便的界面实现对红外热图的采集，分析与导出。用户无需任何学习成本便可以一目了然的使用软件进行所需的全部操作。
 

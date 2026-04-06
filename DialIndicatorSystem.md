@@ -8,7 +8,7 @@
 
 ## 2. 项目亮点展示
 
-<img src="./ExperimentSystem.assets/image-20260407015618822.png" style="width:50%;" />
+<div style="text-align:center;"><img src="./DialIndicatorSystem.assets/image-20260407014715965.png" style="width:50%;" /></div>
 
 本项目提供了一套现代化、高响应速度的 GUI 界面。核心亮点包括：
 

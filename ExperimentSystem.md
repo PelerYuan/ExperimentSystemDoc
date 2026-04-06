@@ -66,11 +66,11 @@
 
 **二维示意图**：
 
-<img src="./ExperimentSystem.assets/system.png" style="width:50%;" />
+<div style="text-align:center;"><img src="./ExperimentSystem.assets/system.png" style="width:50%;" /></div>
 
 **实物图**：
 
-<img src="./ExperimentSystem.assets/image-20251206200545655.png" style="width:50%;" />
+<div style="text-align:center;"><img src="./ExperimentSystem.assets/image-20251206200545655.png" style="width:50%;" /></div>
 
 由于拍摄时还处于开发和调试阶段，钻机平台上方仍有杂物未清除。千分表由于使用场景不同并未出现在图中，请见**项目展示**章节。
 
@@ -80,25 +80,25 @@
 
 ### 工控计算机系统
 
-<img src="./ExperimentSystem.assets/image-20251206202253490.png" alt="image-20251206202253490" style="width:50%;" />
+<div style="text-align:center;"><img src="./ExperimentSystem.assets/image-20251206202253490.png" alt="image-20251206202253490" style="width:50%;" /></div>
 
 完备的集成实验与加工系统。包含全部的上位机软件和所需的数据分析软件，并创建常见系统管理工具的快捷方式。系统层面采用 Windows 10 Enterprise 2021 LTSC，结合脚本进行深度优化，停止系统更新等服务，确保系统稳定且不会变动。详见：[工控计算机系统](./IndustrialControlComputerSystem.md)。
 
 ### 二维滑轨模块化编程控制系统
 
-<img src="./ExperimentSystem.assets/image-20251205164505709.png" alt="image-20251205164505709" style="width:50%;" />
+<div style="text-align:center;"><img src="./ExperimentSystem.assets/image-20251205164505709.png" alt="image-20251205164505709" style="width:50%;" /></div>
 
 零成本上手的模块化编程系统。支持控制台输出，循环语句，条件语句，变量和函数，以及对滑轨进行初始化，归位，精确移动，设置速度移动等操作。详见：[二维滑轨模块化编程控制系统](./SlidewayControlSystem.md)。
 
 ### 红外热图实时传输与分析系统
 
-<img src="./ThermalImageAnalysisSystem.assets/image-20260407021750202.png" alt="image-20260407021750202" style="width:50%;" />
+<div style="text-align:center;"><img src="./ThermalImageAnalysisSystem.assets/image-20260407021750202.png" alt="image-20260407021750202" style="width:50%;" /></div>
 
 精简易用的红外温感软件。支持从设备实时传输并录制红外热图视频，分析视频，获取每一帧中心点与3个用户自定义点位的温度值，并支持视频和分析结果的保存。详见：[红外热图实时传输与分析系统](./ThermalImageAnalysisSystem.md)。
 
 ### 千分表数据实时采集与记录系统
 
-<img src="./ExperimentSystem.assets/image-20260407015618822.png" style="width:50%;" />
+<div style="text-align:center;"><img src="./ExperimentSystem.assets/image-20260407015618822.png" style="width:50%;" /></div>
 
 强大的千分表数据读取软件，包含实验所需的全部功能。支持自动检测并比配波特率，动态读取数据并实时在图表中显示，以及数据导出。详见：[千分表数据实时采集与记录系统](./DialIndicatorSystem.md)。
 
@@ -130,19 +130,19 @@
 
 ## 10. 开发相册
 
-<img src="./ExperimentSystem.assets/image-20251207175325077.png" alt="image-20251207175325077" style="width:33%;" />
+<div style="text-align:center;"><img src="./ExperimentSystem.assets/image-20251207175325077.png" alt="image-20251207175325077" style="width:33%;" /></div>
 
 <center>一开始总是一团糟的$#&</center>
 
-<img src="./ExperimentSystem.assets/71074a0ef4a581ed09c7efd27ff8b435.jpg" alt="71074a0ef4a581ed09c7efd27ff8b435" style="width:25%;" />
+<div style="text-align:center;"><img src="./ExperimentSystem.assets/71074a0ef4a581ed09c7efd27ff8b435.jpg" alt="71074a0ef4a581ed09c7efd27ff8b435" style="width:25%;" /></div>
 
 <center>这个硬件看起来并不是开源的……</center>
 
-<img src="./ExperimentSystem.assets/image-20251207175453683.png" alt="image-20251207175453683" style="width:33%;" />
+<div style="text-align:center;"><img src="./ExperimentSystem.assets/image-20251207175453683.png" alt="image-20251207175453683" style="width:33%;" /></div>
 
 <center>忙里偷闲，安装系统的时候听点音乐吧</center>
 
-<img src="./ExperimentSystem.assets/dcf64484a6c90d2b0af9f955a0745be8.jpg" alt="dcf64484a6c90d2b0af9f955a0745be8" style="width:33%;" />
+<div style="text-align:center;"><img src="./ExperimentSystem.assets/dcf64484a6c90d2b0af9f955a0745be8.jpg" alt="dcf64484a6c90d2b0af9f955a0745be8" style="width:33%;" /></div>
 
 <center>眼睛还是墨镜？</center>
 
