@@ -70,7 +70,7 @@
 
 **实物图**：
 
-![image-20251206200545655](./ExperimentSystem.assets/image-20251206200545655.png)
+<img src="./ExperimentSystem.assets/image-20251206200545655.png" style="width:50%;" />
 
 由于拍摄时还处于开发和调试阶段，钻机平台上方仍有杂物未清除。千分表由于使用场景不同并未出现在图中，请见**项目展示**章节。
 
@@ -92,13 +92,13 @@
 
 ### 红外热图实时传输与分析系统
 
-（等待图片
+<img src="./ThermalImageAnalysisSystem.assets/image-20260407021750202.png" alt="image-20260407021750202" style="width:50%;" />
 
 精简易用的红外温感软件。支持从设备实时传输并录制红外热图视频，分析视频，获取每一帧中心点与3个用户自定义点位的温度值，并支持视频和分析结果的保存。详见：[红外热图实时传输与分析系统](./ThermalImageAnalysisSystem.md)。
 
 ### 千分表数据实时采集与记录系统
 
-![image-20260407015618822](./ExperimentSystem.assets/image-20260407015618822.png)
+<img src="./ExperimentSystem.assets/image-20260407015618822.png" style="width:50%;" />
 
 强大的千分表数据读取软件，包含实验所需的全部功能。支持自动检测并比配波特率，动态读取数据并实时在图表中显示，以及数据导出。详见：[千分表数据实时采集与记录系统](./DialIndicatorSystem.md)。
 
@@ -142,7 +142,7 @@
 
 <center>忙里偷闲，安装系统的时候听点音乐吧</center>
 
-<img src="./ExperimentSystem.assets/dcf64484a6c90d2b0af9f955a0745be8.jpg" alt="dcf64484a6c90d2b0af9f955a0745be8" style="width:67%;" />
+<img src="./ExperimentSystem.assets/dcf64484a6c90d2b0af9f955a0745be8.jpg" alt="dcf64484a6c90d2b0af9f955a0745be8" style="width:33%;" />
 
 <center>眼睛还是墨镜？</center>
 
