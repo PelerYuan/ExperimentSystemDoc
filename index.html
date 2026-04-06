@@ -1,86 +1,233 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>实验系统文档</title>
+  <title>Experiment System Docs</title>
 
-  <!-- docsify 主题：Vue 主题（适合中文技术文档） -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
 
   <style>
-    /* 中文字体优化 */
+    /* ── Base ── */
     body {
+      font-size: 14px;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
                    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
     }
-    /* 图片自适应容器宽度 */
+    .markdown-section {
+      font-size: 14px;
+    }
     .markdown-section img {
       max-width: 100%;
       height: auto;
     }
+
+    /* ── Dark mode — scoped under html.dark ── */
+    html.dark body { background-color: #1a1a2e; color: #c9d1d9; }
+
+    html.dark .content { background-color: #1a1a2e; }
+
+    html.dark .markdown-section { color: #c9d1d9; }
+    html.dark .markdown-section h1,
+    html.dark .markdown-section h2,
+    html.dark .markdown-section h3,
+    html.dark .markdown-section h4,
+    html.dark .markdown-section h5,
+    html.dark .markdown-section h6 { color: #e6edf3; }
+    html.dark .markdown-section a { color: #58a6ff; }
+    html.dark .markdown-section a:hover { color: #79c0ff; }
+    html.dark .markdown-section hr { background-color: rgba(255,255,255,0.1); border: none; height: 1px; }
+    html.dark .markdown-section blockquote {
+      border-left: 4px solid #388bfd;
+      color: #8b949e;
+      background: rgba(56,139,253,0.07);
+    }
+    html.dark .markdown-section blockquote p { color: #8b949e; }
+
+    html.dark .markdown-section table thead tr { background-color: #161b22; border-bottom: 1px solid #30363d; }
+    html.dark .markdown-section table thead th { color: #e6edf3; border-color: #30363d; }
+    html.dark .markdown-section table tbody tr { border-bottom: 1px solid #21262d; }
+    html.dark .markdown-section table tbody tr:nth-child(even) { background-color: #161b22; }
+    html.dark .markdown-section table tbody td { border-color: #30363d; color: #c9d1d9; }
+
+    html.dark .markdown-section pre { background-color: #0d1117; border: 1px solid #30363d; border-radius: 6px; }
+    html.dark .markdown-section pre > code { color: #e6edf3; background-color: transparent; }
+    html.dark .markdown-section code { color: #f97316; background-color: rgba(240,246,252,0.07); border-radius: 4px; padding: 0.1em 0.4em; }
+
+    html.dark .sidebar { background-color: #16213e; border-right: 1px solid #2a2a4a; }
+    html.dark .sidebar ul li a { color: #8b949e; }
+    html.dark .sidebar ul li a:hover { color: #c9d1d9; text-decoration: none; }
+    html.dark .sidebar ul li.active > a { color: #58a6ff; font-weight: 600; border-right: 2px solid #58a6ff; }
+    html.dark .sidebar-nav > ul > li > p,
+    html.dark .sidebar-nav > ul > li > strong { color: #e6edf3; }
+    html.dark .sidebar-toggle { background-color: #16213e; }
+    html.dark .sidebar-toggle span { background-color: #8b949e; }
+
+    html.dark .app-nav { background-color: #0d1117; border-bottom: 1px solid #21262d; }
+    html.dark .app-nav li ul { background-color: #161b22; border: 1px solid #30363d; }
+    html.dark .app-nav a { color: #c9d1d9; }
+
+    html.dark .search input { background-color: #161b22; border: 1px solid #30363d; color: #c9d1d9; }
+    html.dark .search input::placeholder { color: #484f58; }
+    html.dark .search .results-panel { background-color: #161b22; border: 1px solid #30363d; }
+    html.dark .search .matching-post { border-bottom: 1px solid #21262d; }
+    html.dark .search .matching-post a { color: #58a6ff; }
+    html.dark .search .matching-post p { color: #8b949e; }
+
+    html.dark .mermaid { background-color: #161b22; border-radius: 6px; padding: 12px; }
+
+    /* ── Floating controls ── */
+    #doc-controls {
+      position: fixed;
+      top: 12px;
+      right: 16px;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    #theme-toggle {
+      width: 36px;
+      height: 32px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      background: #f0f0f0;
+      color: #34495e;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+      transition: background 0.2s;
+    }
+    #theme-toggle:hover { background: #e0e0e0; }
+    html.dark #theme-toggle { background: #21262d; color: #e6edf3; box-shadow: 0 1px 4px rgba(0,0,0,0.4); }
+    html.dark #theme-toggle:hover { background: #30363d; }
+
+    #lang-toggle {
+      display: flex;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+    }
+    html.dark #lang-toggle { box-shadow: 0 1px 4px rgba(0,0,0,0.4); }
+
+    .lang-btn {
+      height: 32px;
+      padding: 0 10px;
+      border: none;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      font-family: inherit;
+      letter-spacing: 0.03em;
+      background: #f0f0f0;
+      color: #888;
+      transition: background 0.2s, color 0.2s;
+    }
+    html.dark .lang-btn { background: #21262d; color: #484f58; }
+    .lang-btn.active { background: #42b983; color: #fff; }
+    html.dark .lang-btn.active { background: #388bfd; color: #fff; }
+    .lang-btn:not(.active):hover { background: #e0e0e0; color: #555; }
+    html.dark .lang-btn:not(.active):hover { background: #30363d; color: #8b949e; }
   </style>
 </head>
+
 <body>
-  <!-- docsify 渲染挂载点 -->
-  <div id="app">文档加载中...</div>
+  <div id="app">Loading...</div>
+
+  <div id="doc-controls">
+    <button id="theme-toggle" title="Toggle dark/light mode" aria-label="Toggle dark/light mode"></button>
+    <div id="lang-toggle" role="group" aria-label="Language">
+      <button id="btn-en" class="lang-btn" onclick="setLang('en')">EN</button>
+      <button id="btn-zh" class="lang-btn" onclick="setLang('zh')">ZH</button>
+    </div>
+  </div>
 
   <script>
+    const LS_THEME = 'docsify-theme';
+    const LS_LANG  = 'docsify-lang';
+
+    const savedTheme = localStorage.getItem(LS_THEME) ?? 'dark';
+    const savedLang  = localStorage.getItem(LS_LANG)  ?? 'en';
+    const isEn = savedLang === 'en';
+
+    // Apply dark class before first paint — prevents flash
+    if (savedTheme === 'dark') document.documentElement.classList.add('dark');
+
     window.$docsify = {
-      // 基础配置
-      name: '实验系统文档',
-      repo: '',   // 填入 GitHub 仓库地址后右上角会显示图标，例：'your-username/your-repo'
-
-      // 首页配置：不改名 README.md，直接指定首页文件
-      homepage: 'ExperimentSystem.md',
-
-      // 路由配置：启用相对路径模式，使 ./Doc.md 链接正确解析
+      name:         isEn ? 'Experiment System Docs' : '实验系统文档',
+      repo:         '',
+      homepage:     isEn ? 'translated_docs_en/ExperimentSystem_en.md' : 'ExperimentSystem.md',
       relativePath: true,
-
-      // 侧边栏配置
-      loadSidebar: true,
-      subMaxLevel: 2,   // 侧边栏自动提取到 H2 标题
-
-      // 搜索插件配置
+      loadSidebar:  isEn ? 'translated_docs_en/_sidebar_en.md' : '_sidebar.md',
+      subMaxLevel:  2,
       search: {
-        placeholder: '搜索文档...',
-        noData: '未找到结果',
+        placeholder: isEn ? 'Search docs...'   : '搜索文档...',
+        noData:      isEn ? 'No results found' : '未找到结果',
         depth: 3,
       },
-
-      // Mermaid 插件配置
-      mermaidConfig: {
-        querySelector: '.mermaid',
-      },
-
-      // 切换页面时自动滚动到顶部
+      mermaidConfig: { querySelector: '.mermaid' },
       auto2top: true,
     };
+
+    // Redirect hash to correct language homepage if needed
+    (function () {
+      const hash = window.location.hash;
+      const isEnHash = hash.includes('/translated_docs_en/');
+      const isEmpty  = hash === '' || hash === '#/';
+      const isZhHash = !isEmpty && !isEnHash;
+
+      if (isEn && (isEmpty || isZhHash)) {
+        window.location.hash = '#/translated_docs_en/ExperimentSystem_en';
+      } else if (!isEn && (isEmpty || isEnHash)) {
+        window.location.hash = '#/ExperimentSystem';
+      }
+    })();
+
+    function setTheme(mode) {
+      localStorage.setItem(LS_THEME, mode);
+      document.documentElement.classList.toggle('dark', mode === 'dark');
+      updateThemeButton();
+      if (window.mermaid) {
+        window.mermaid.initialize({ startOnLoad: false, theme: mode === 'dark' ? 'dark' : 'default', securityLevel: 'loose' });
+      }
+    }
+
+    function updateThemeButton() {
+      const btn = document.getElementById('theme-toggle');
+      if (!btn) return;
+      const isDark = document.documentElement.classList.contains('dark');
+      btn.textContent = isDark ? '☀️' : '🌙';
+      btn.title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+    }
+
+    function setLang(lang) {
+      if (localStorage.getItem(LS_LANG) === lang) return;
+      localStorage.setItem(LS_LANG, lang);
+      window.location.hash = '';
+      window.location.reload();
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('theme-toggle').addEventListener('click', function () {
+        setTheme(document.documentElement.classList.contains('dark') ? 'light' : 'dark');
+      });
+      updateThemeButton();
+      document.getElementById(isEn ? 'btn-en' : 'btn-zh').classList.add('active');
+    });
   </script>
 
-  <!-- docsify 核心库 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
-
-  <!-- 搜索插件（全文本地搜索） -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
-
-  <!-- 图片点击放大插件 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
-
-  <!-- Mermaid v10（ESM 模块方式，兼容异步渲染） -->
   <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({
-      startOnLoad: false,
-      theme: 'default',
-      securityLevel: 'loose',
-    });
+    const isDark = document.documentElement.classList.contains('dark');
+    mermaid.initialize({ startOnLoad: false, theme: isDark ? 'dark' : 'default', securityLevel: 'loose' });
     window.mermaid = mermaid;
   </script>
 
-  <!-- docsify-mermaid 插件（处理 mermaid v10+ 的异步渲染） -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-mermaid@2.0.1/dist/docsify-mermaid.js"></script>
-
 </body>
 </html>
