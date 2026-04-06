@@ -68,12 +68,6 @@ In Dr. Lukas's doctoral research, it is necessary to study the effects of differ
 
 <div style="text-align:center;"><img src="./ExperimentSystem.assets/system.png" style="width:50%;" /></div>
 
-**Physical Photo**:
-
-<div style="text-align:center;"><img src="./ExperimentSystem.assets/image-20251206200545655.png" style="width:50%;" /></div>
-
-As the photo was taken during the development and debugging phase, some items on the drilling platform had not yet been cleared. The dial indicator is not shown here due to its different usage scenario; please refer to the **Project Showcase** section.
-
 ## 6. Project Showcase
 
 Due to copyright considerations, this section only showcases software or hardware wiring independently developed by Peler.
