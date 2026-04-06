@@ -1,0 +1,6 @@
+# macOS 元数据
+._*
+.DS_Store
+
+# drawio 草稿
+*.drawio

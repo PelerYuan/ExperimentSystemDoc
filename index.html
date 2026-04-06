@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>实验系统文档</title>
+
+  <!-- docsify 主题：Vue 主题（适合中文技术文档） -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+
+  <style>
+    /* 中文字体优化 */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+    /* 图片自适应容器宽度 */
+    .markdown-section img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- docsify 渲染挂载点 -->
+  <div id="app">文档加载中...</div>
+
+  <script>
+    window.$docsify = {
+      // 基础配置
+      name: '实验系统文档',
+      repo: '',   // 填入 GitHub 仓库地址后右上角会显示图标，例：'your-username/your-repo'
+
+      // 首页配置：不改名 README.md，直接指定首页文件
+      homepage: 'ExperimentSystem.md',
+
+      // 路由配置：启用相对路径模式，使 ./Doc.md 链接正确解析
+      relativePath: true,
+
+      // 侧边栏配置
+      loadSidebar: true,
+      subMaxLevel: 2,   // 侧边栏自动提取到 H2 标题
+
+      // 搜索插件配置
+      search: {
+        placeholder: '搜索文档...',
+        noData: '未找到结果',
+        depth: 3,
+      },
+
+      // Mermaid 插件配置
+      mermaidConfig: {
+        querySelector: '.mermaid',
+      },
+
+      // 切换页面时自动滚动到顶部
+      auto2top: true,
+    };
+  </script>
+
+  <!-- docsify 核心库 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+
+  <!-- 搜索插件（全文本地搜索） -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+
+  <!-- 图片点击放大插件 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
+
+  <!-- Mermaid v10（ESM 模块方式，兼容异步渲染） -->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: 'default',
+      securityLevel: 'loose',
+    });
+    window.mermaid = mermaid;
+  </script>
+
+  <!-- docsify-mermaid 插件（处理 mermaid v10+ 的异步渲染） -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-mermaid@2.0.1/dist/docsify-mermaid.js"></script>
+
+</body>
+</html>
