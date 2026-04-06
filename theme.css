@@ -1,0 +1,212 @@
+/* ── Font size ── */
+:root {
+  font-size: 14px;
+}
+
+.markdown-section {
+  font-size: 14px;
+}
+
+/* ── Light theme ── */
+[data-theme="light"] {
+  --base-background-color: #ffffff;
+  --base-font-color: #34495e;
+  --sidebar-background: #f5f7f9;
+  --sidebar-nav-link-color: #505d6b;
+  --sidebar-nav-link-color--active: #42b983;
+  --sidebar-border-color: #e8e8e8;
+  --code-background: #f8f8f8;
+  --code-font-color: #525252;
+  --blockquote-background: #f8f8f8;
+  --blockquote-border-color: #42b983;
+  --table-head-background: #f0f0f0;
+  --table-row-odd-background: #fbfbfb;
+  --link-color: #42b983;
+  --navbar-background: #ffffff;
+  --navbar-border-color: #eee;
+  --search-input-background: #ffffff;
+  --search-input-color: #34495e;
+  --search-result-background: #ffffff;
+  --cover-background: #ffffff;
+  --h-color: #2c3e50;
+  --strong-color: #2c3e50;
+  --hr-color: #e8e8e8;
+}
+
+/* ── Dark theme ── */
+[data-theme="dark"] {
+  --base-background-color: #1a1a2e;
+  --base-font-color: #c9d1d9;
+  --sidebar-background: #161b22;
+  --sidebar-nav-link-color: #8b949e;
+  --sidebar-nav-link-color--active: #58a6ff;
+  --sidebar-border-color: #30363d;
+  --code-background: #0d1117;
+  --code-font-color: #e6edf3;
+  --blockquote-background: #161b22;
+  --blockquote-border-color: #58a6ff;
+  --table-head-background: #161b22;
+  --table-row-odd-background: #1c2128;
+  --link-color: #58a6ff;
+  --navbar-background: #161b22;
+  --navbar-border-color: #30363d;
+  --search-input-background: #0d1117;
+  --search-input-color: #c9d1d9;
+  --search-result-background: #161b22;
+  --cover-background: #1a1a2e;
+  --h-color: #e6edf3;
+  --strong-color: #e6edf3;
+  --hr-color: #30363d;
+}
+
+/* ── Apply variables ── */
+body {
+  background-color: var(--base-background-color) !important;
+  color: var(--base-font-color) !important;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.sidebar {
+  background-color: var(--sidebar-background) !important;
+  border-right: 1px solid var(--sidebar-border-color) !important;
+}
+
+.sidebar-nav a {
+  color: var(--sidebar-nav-link-color) !important;
+}
+
+.sidebar-nav a.active,
+.sidebar-nav a:hover {
+  color: var(--sidebar-nav-link-color--active) !important;
+}
+
+.sidebar h1 a,
+.sidebar > h1 {
+  color: var(--sidebar-nav-link-color--active) !important;
+}
+
+.app-nav {
+  background-color: var(--navbar-background) !important;
+  border-bottom: 1px solid var(--navbar-border-color) !important;
+}
+
+.app-nav a {
+  color: var(--base-font-color) !important;
+}
+
+.content {
+  background-color: var(--base-background-color) !important;
+}
+
+.markdown-section {
+  color: var(--base-font-color) !important;
+}
+
+.markdown-section h1,
+.markdown-section h2,
+.markdown-section h3,
+.markdown-section h4,
+.markdown-section h5,
+.markdown-section h6 {
+  color: var(--h-color) !important;
+}
+
+.markdown-section strong {
+  color: var(--strong-color) !important;
+}
+
+.markdown-section hr {
+  border-color: var(--hr-color) !important;
+}
+
+.markdown-section code {
+  background-color: var(--code-background) !important;
+  color: var(--code-font-color) !important;
+}
+
+.markdown-section pre {
+  background-color: var(--code-background) !important;
+}
+
+.markdown-section pre code {
+  background-color: transparent !important;
+  color: var(--code-font-color) !important;
+}
+
+.markdown-section blockquote {
+  background-color: var(--blockquote-background) !important;
+  border-left: 4px solid var(--blockquote-border-color) !important;
+  color: var(--base-font-color) !important;
+}
+
+.markdown-section table thead tr {
+  background-color: var(--table-head-background) !important;
+  color: var(--h-color) !important;
+}
+
+.markdown-section table tbody tr:nth-child(odd) {
+  background-color: var(--table-row-odd-background) !important;
+}
+
+.markdown-section table td,
+.markdown-section table th {
+  border-color: var(--sidebar-border-color) !important;
+  color: var(--base-font-color) !important;
+}
+
+.markdown-section a {
+  color: var(--link-color) !important;
+}
+
+/* Search plugin */
+.search input {
+  background-color: var(--search-input-background) !important;
+  color: var(--search-input-color) !important;
+  border-color: var(--sidebar-border-color) !important;
+}
+
+.search .results-panel {
+  background-color: var(--search-result-background) !important;
+}
+
+.search .results-panel .matching-post {
+  border-bottom-color: var(--sidebar-border-color) !important;
+}
+
+.search .results-panel .matching-post a {
+  color: var(--link-color) !important;
+}
+
+.search .results-panel .matching-post p {
+  color: var(--base-font-color) !important;
+}
+
+/* Sidebar toggle button */
+.sidebar-toggle {
+  background-color: var(--sidebar-background) !important;
+}
+
+.sidebar-toggle span {
+  background-color: var(--base-font-color) !important;
+}
+
+/* ── Toggle button styles ── */
+#theme-toggle,
+#lang-toggle {
+  cursor: pointer;
+  padding: 4px 10px;
+  border: 1px solid var(--sidebar-border-color);
+  border-radius: 4px;
+  background: var(--sidebar-background);
+  color: var(--base-font-color);
+  font-size: 13px;
+  margin-left: 8px;
+  transition: all 0.2s;
+  vertical-align: middle;
+}
+
+#theme-toggle:hover,
+#lang-toggle:hover {
+  border-color: var(--link-color);
+  color: var(--link-color);
+}

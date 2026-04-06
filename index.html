@@ -1,233 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Experiment System Docs</title>
+  <title>Experiment System Documentation</title>
 
+  <!-- Docsify Vue theme -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <!-- Custom theme: dark/light variables + 14px font -->
+  <link rel="stylesheet" href="theme.css">
 
   <style>
-    /* ── Base ── */
-    body {
-      font-size: 14px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-    }
-    .markdown-section {
-      font-size: 14px;
-    }
     .markdown-section img {
       max-width: 100%;
       height: auto;
     }
-
-    /* ── Dark mode — scoped under html.dark ── */
-    html.dark body { background-color: #1a1a2e; color: #c9d1d9; }
-
-    html.dark .content { background-color: #1a1a2e; }
-
-    html.dark .markdown-section { color: #c9d1d9; }
-    html.dark .markdown-section h1,
-    html.dark .markdown-section h2,
-    html.dark .markdown-section h3,
-    html.dark .markdown-section h4,
-    html.dark .markdown-section h5,
-    html.dark .markdown-section h6 { color: #e6edf3; }
-    html.dark .markdown-section a { color: #58a6ff; }
-    html.dark .markdown-section a:hover { color: #79c0ff; }
-    html.dark .markdown-section hr { background-color: rgba(255,255,255,0.1); border: none; height: 1px; }
-    html.dark .markdown-section blockquote {
-      border-left: 4px solid #388bfd;
-      color: #8b949e;
-      background: rgba(56,139,253,0.07);
-    }
-    html.dark .markdown-section blockquote p { color: #8b949e; }
-
-    html.dark .markdown-section table thead tr { background-color: #161b22; border-bottom: 1px solid #30363d; }
-    html.dark .markdown-section table thead th { color: #e6edf3; border-color: #30363d; }
-    html.dark .markdown-section table tbody tr { border-bottom: 1px solid #21262d; }
-    html.dark .markdown-section table tbody tr:nth-child(even) { background-color: #161b22; }
-    html.dark .markdown-section table tbody td { border-color: #30363d; color: #c9d1d9; }
-
-    html.dark .markdown-section pre { background-color: #0d1117; border: 1px solid #30363d; border-radius: 6px; }
-    html.dark .markdown-section pre > code { color: #e6edf3; background-color: transparent; }
-    html.dark .markdown-section code { color: #f97316; background-color: rgba(240,246,252,0.07); border-radius: 4px; padding: 0.1em 0.4em; }
-
-    html.dark .sidebar { background-color: #16213e; border-right: 1px solid #2a2a4a; }
-    html.dark .sidebar ul li a { color: #8b949e; }
-    html.dark .sidebar ul li a:hover { color: #c9d1d9; text-decoration: none; }
-    html.dark .sidebar ul li.active > a { color: #58a6ff; font-weight: 600; border-right: 2px solid #58a6ff; }
-    html.dark .sidebar-nav > ul > li > p,
-    html.dark .sidebar-nav > ul > li > strong { color: #e6edf3; }
-    html.dark .sidebar-toggle { background-color: #16213e; }
-    html.dark .sidebar-toggle span { background-color: #8b949e; }
-
-    html.dark .app-nav { background-color: #0d1117; border-bottom: 1px solid #21262d; }
-    html.dark .app-nav li ul { background-color: #161b22; border: 1px solid #30363d; }
-    html.dark .app-nav a { color: #c9d1d9; }
-
-    html.dark .search input { background-color: #161b22; border: 1px solid #30363d; color: #c9d1d9; }
-    html.dark .search input::placeholder { color: #484f58; }
-    html.dark .search .results-panel { background-color: #161b22; border: 1px solid #30363d; }
-    html.dark .search .matching-post { border-bottom: 1px solid #21262d; }
-    html.dark .search .matching-post a { color: #58a6ff; }
-    html.dark .search .matching-post p { color: #8b949e; }
-
-    html.dark .mermaid { background-color: #161b22; border-radius: 6px; padding: 12px; }
-
-    /* ── Floating controls ── */
-    #doc-controls {
-      position: fixed;
-      top: 12px;
-      right: 16px;
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    #theme-toggle {
-      width: 36px;
-      height: 32px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 16px;
-      background: #f0f0f0;
-      color: #34495e;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.12);
-      transition: background 0.2s;
-    }
-    #theme-toggle:hover { background: #e0e0e0; }
-    html.dark #theme-toggle { background: #21262d; color: #e6edf3; box-shadow: 0 1px 4px rgba(0,0,0,0.4); }
-    html.dark #theme-toggle:hover { background: #30363d; }
-
-    #lang-toggle {
-      display: flex;
-      border-radius: 6px;
-      overflow: hidden;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.12);
-    }
-    html.dark #lang-toggle { box-shadow: 0 1px 4px rgba(0,0,0,0.4); }
-
-    .lang-btn {
-      height: 32px;
-      padding: 0 10px;
-      border: none;
-      cursor: pointer;
-      font-size: 12px;
-      font-weight: 600;
-      font-family: inherit;
-      letter-spacing: 0.03em;
-      background: #f0f0f0;
-      color: #888;
-      transition: background 0.2s, color 0.2s;
-    }
-    html.dark .lang-btn { background: #21262d; color: #484f58; }
-    .lang-btn.active { background: #42b983; color: #fff; }
-    html.dark .lang-btn.active { background: #388bfd; color: #fff; }
-    .lang-btn:not(.active):hover { background: #e0e0e0; color: #555; }
-    html.dark .lang-btn:not(.active):hover { background: #30363d; color: #8b949e; }
   </style>
 </head>
-
 <body>
   <div id="app">Loading...</div>
 
-  <div id="doc-controls">
-    <button id="theme-toggle" title="Toggle dark/light mode" aria-label="Toggle dark/light mode"></button>
-    <div id="lang-toggle" role="group" aria-label="Language">
-      <button id="btn-en" class="lang-btn" onclick="setLang('en')">EN</button>
-      <button id="btn-zh" class="lang-btn" onclick="setLang('zh')">ZH</button>
-    </div>
-  </div>
-
   <script>
-    const LS_THEME = 'docsify-theme';
-    const LS_LANG  = 'docsify-lang';
-
-    const savedTheme = localStorage.getItem(LS_THEME) ?? 'dark';
-    const savedLang  = localStorage.getItem(LS_LANG)  ?? 'en';
-    const isEn = savedLang === 'en';
-
-    // Apply dark class before first paint — prevents flash
-    if (savedTheme === 'dark') document.documentElement.classList.add('dark');
-
-    window.$docsify = {
-      name:         isEn ? 'Experiment System Docs' : '实验系统文档',
-      repo:         '',
-      homepage:     isEn ? 'translated_docs_en/ExperimentSystem_en.md' : 'ExperimentSystem.md',
-      relativePath: true,
-      loadSidebar:  isEn ? 'translated_docs_en/_sidebar_en.md' : '_sidebar.md',
-      subMaxLevel:  2,
-      search: {
-        placeholder: isEn ? 'Search docs...'   : '搜索文档...',
-        noData:      isEn ? 'No results found' : '未找到结果',
-        depth: 3,
-      },
-      mermaidConfig: { querySelector: '.mermaid' },
-      auto2top: true,
-    };
-
-    // Redirect hash to correct language homepage if needed
+    // Apply saved preferences before Docsify loads (prevents flash)
     (function () {
-      const hash = window.location.hash;
-      const isEnHash = hash.includes('/translated_docs_en/');
-      const isEmpty  = hash === '' || hash === '#/';
-      const isZhHash = !isEmpty && !isEnHash;
-
-      if (isEn && (isEmpty || isZhHash)) {
-        window.location.hash = '#/translated_docs_en/ExperimentSystem_en';
-      } else if (!isEn && (isEmpty || isEnHash)) {
-        window.location.hash = '#/ExperimentSystem';
-      }
+      var lang = localStorage.getItem('docsify-lang') || 'en';
+      var theme = localStorage.getItem('docsify-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+      window.__docsifyLangSuffix = lang === 'zh' ? '_zh' : '_en';
     })();
 
-    function setTheme(mode) {
-      localStorage.setItem(LS_THEME, mode);
-      document.documentElement.classList.toggle('dark', mode === 'dark');
-      updateThemeButton();
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('docsify-theme', theme);
+      var btn = document.getElementById('theme-toggle');
+      if (btn) btn.textContent = theme === 'dark' ? '☀ Light' : '☾ Dark';
       if (window.mermaid) {
-        window.mermaid.initialize({ startOnLoad: false, theme: mode === 'dark' ? 'dark' : 'default', securityLevel: 'loose' });
+        window.mermaid.initialize({
+          startOnLoad: false,
+          theme: theme === 'dark' ? 'dark' : 'default',
+          securityLevel: 'loose',
+        });
+        var hash = window.location.hash;
+        window.location.hash = '';
+        window.location.hash = hash;
       }
     }
 
-    function updateThemeButton() {
-      const btn = document.getElementById('theme-toggle');
-      if (!btn) return;
-      const isDark = document.documentElement.classList.contains('dark');
-      btn.textContent = isDark ? '☀️' : '🌙';
-      btn.title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+    function applyLang(lang) {
+      localStorage.setItem('docsify-lang', lang);
+      var suffix = lang === 'zh' ? '_zh' : '_en';
+      window.__docsifyLangSuffix = suffix;
+      window.$docsify.loadSidebar = '_sidebar' + suffix + '.md';
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+      var btn = document.getElementById('lang-toggle');
+      if (btn) btn.textContent = lang === 'zh' ? 'English' : '中文';
+      var hash = window.location.hash.replace(/^#\//, '');
+      var newPage = hash
+        ? hash.replace(/_(en|zh)(\.md)/, suffix + '$2')
+        : 'ExperimentSystem' + suffix + '.md';
+      window.location.hash = '#/' + newPage;
     }
 
-    function setLang(lang) {
-      if (localStorage.getItem(LS_LANG) === lang) return;
-      localStorage.setItem(LS_LANG, lang);
-      window.location.hash = '';
-      window.location.reload();
-    }
+    window.$docsify = {
+      name: 'Experiment System Documentation',
+      repo: '',
+      homepage: 'ExperimentSystem' + window.__docsifyLangSuffix + '.md',
+      relativePath: true,
+      loadSidebar: '_sidebar' + window.__docsifyLangSuffix + '.md',
+      subMaxLevel: 2,
+      search: {
+        placeholder: 'Search docs...',
+        noData: 'No results found',
+        depth: 3,
+      },
+      mermaidConfig: {
+        querySelector: '.mermaid',
+      },
+      auto2top: true,
+      plugins: [
+        function (hook) {
+          hook.doneEach(function () {
+            if (document.getElementById('theme-toggle')) return;
+            var nav = document.querySelector('.app-nav');
+            if (!nav) return;
 
-    document.addEventListener('DOMContentLoaded', function () {
-      document.getElementById('theme-toggle').addEventListener('click', function () {
-        setTheme(document.documentElement.classList.contains('dark') ? 'light' : 'dark');
-      });
-      updateThemeButton();
-      document.getElementById(isEn ? 'btn-en' : 'btn-zh').classList.add('active');
-    });
+            var themeBtn = document.createElement('button');
+            themeBtn.id = 'theme-toggle';
+            var currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+            themeBtn.textContent = currentTheme === 'dark' ? '☀ Light' : '☾ Dark';
+
+            var langBtn = document.createElement('button');
+            langBtn.id = 'lang-toggle';
+            var currentLang = localStorage.getItem('docsify-lang') || 'en';
+            langBtn.textContent = currentLang === 'zh' ? 'English' : '中文';
+
+            nav.prepend(langBtn);
+            nav.prepend(themeBtn);
+
+            themeBtn.addEventListener('click', function () {
+              var t = document.documentElement.getAttribute('data-theme');
+              applyTheme(t === 'dark' ? 'light' : 'dark');
+            });
+
+            langBtn.addEventListener('click', function () {
+              var l = localStorage.getItem('docsify-lang') || 'en';
+              applyLang(l === 'en' ? 'zh' : 'en');
+            });
+          });
+        },
+      ],
+    };
   </script>
 
+  <!-- Docsify core -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+  <!-- Search plugin -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+  <!-- Image zoom plugin -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
+
+  <!-- Mermaid v10 (ESM) -->
   <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    const isDark = document.documentElement.classList.contains('dark');
-    mermaid.initialize({ startOnLoad: false, theme: isDark ? 'dark' : 'default', securityLevel: 'loose' });
+    var theme = document.documentElement.getAttribute('data-theme') || 'dark';
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: theme === 'dark' ? 'dark' : 'default',
+      securityLevel: 'loose',
+    });
     window.mermaid = mermaid;
   </script>
 
-  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
+  <!-- docsify-mermaid plugin -->
   <script src="//cdn.jsdelivr.net/npm/docsify-mermaid@2.0.1/dist/docsify-mermaid.js"></script>
+
 </body>
 </html>

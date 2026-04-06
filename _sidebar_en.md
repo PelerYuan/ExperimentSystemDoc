@@ -1,4 +1,4 @@
-<!-- _sidebar.md — default (English) -->
+<!-- _sidebar_en.md -->
 
 - **Experiment System Documentation**
 
