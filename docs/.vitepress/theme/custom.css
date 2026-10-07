@@ -1,19 +1,3 @@
-:root {
-  --vp-c-brand-1: #2563eb;
-  --vp-c-brand-2: #3b82f6;
-  --vp-c-brand-3: #3b82f6;
-  --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: linear-gradient(120deg, #2563eb, #06b6d4);
-  --diagram-accent: var(--vp-c-brand-1);
-  --diagram-accent-soft: color-mix(in srgb, var(--vp-c-brand-1) 14%, transparent);
-  --diagram-line: color-mix(in srgb, var(--vp-c-brand-1) 45%, var(--vp-c-divider));
-  --diagram-frame: color-mix(in srgb, var(--vp-c-brand-1) 9%, var(--vp-c-bg));
-}
-.dark {
-  --vp-c-brand-1: #60a5fa;
-  --vp-c-brand-2: #3b82f6;
-}
-
 /* ---------- Figures: images in the docs ---------- */
 .vp-doc figure {
   margin: 28px auto;
@@ -110,17 +94,6 @@
   .rig__wire--data { animation: none; }
 }
 
-/* Hero: the architecture diagram sits directly on the page, no card chrome */
-.hero-diagram.diagram { width: 100%; border: 0; background: transparent; margin: 0; }
-.hero-diagram .diagram__scroll { padding: 0; overflow: visible; }
-.hero-diagram .diagram__canvas { min-width: 0; width: 100%; }
-.VPHero .image-container { display: block !important; width: 100%; height: auto !important; transform: none !important; }
-.VPHero .image { width: 100%; max-width: 560px; margin: 32px auto 0; }
-@media (min-width: 960px) {
-  .VPHero.has-image .image { margin: 0; max-width: none; }
-  .VPHero.has-image .container { align-items: center; }
-}
-
 /* Click-to-enlarge for diagrams */
 .diagram--zoomable .diagram__scroll { cursor: zoom-in; }
 .diagram__hint { color: var(--vp-c-text-3); }
@@ -150,8 +123,3 @@
   object-fit: cover;
 }
 .medium-zoom-image--opened { object-fit: contain !important; }
-
-/* On phones the hero diagram would be unreadably small and push the title off screen */
-@media (max-width: 639px) {
-  .VPHero .image { display: none; }
-}

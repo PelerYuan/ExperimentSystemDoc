@@ -5,7 +5,9 @@ import mediumZoom from 'medium-zoom'
 import type { Theme } from 'vitepress'
 import Layout from './Layout.vue'
 import Diagram from './Diagram.vue'
+import './theme.css'
 import './custom.css'
+import './home.css'
 
 export default {
   extends: DefaultTheme,
