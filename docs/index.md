@@ -5,10 +5,7 @@ title: Experiment System
 hero:
   name: Physical Experiment System
   text: Machining and measurement, in one workstation
-  tagline: A drilling rig, a 2D slideway and four sensor channels, unified under one industrial PC for a doctoral wood-mechanics study. Designed, built and maintained by one engineer.
-  image:
-    src: /hero-system.png
-    alt: System layout diagram
+  tagline: A drilling rig, a 2D slideway and four sensor channels, unified under one industrial PC for a doctoral wood-mechanics study. Designed, built and maintained from the ground up.
   actions:
     - theme: brand
       text: System Overview

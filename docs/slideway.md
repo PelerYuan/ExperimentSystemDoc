@@ -1,89 +1,93 @@
-# 2D Slideway Modular Programming Control System Overview
-
-## 1. Project Overview
+# 2D Slideway Modular Programming Control System
 
 This project is part of the [Physical Experiment System](./experiment-system).
 
-This project aims to provide general users with a modular web-based programming system that greatly reduces the complexity of slideway programming, enabling users to quickly and conveniently perform slideway operations — including initialization, homing, precise movement, and speed-based movement — in actual experimental workflows.
+## Overview
 
-## 2. Project Highlights
+A modular, web-based programming system that makes slideway programming far easier for ordinary users, so they can initialise, home, move precisely and move at a set speed without writing low-level code.
 
-<div style="text-align:center;"><img src="./assets/slideway/image-20251205164505709.png" style="width:100%;" /></div>
+<figure class="w-100">
+  <img src="./assets/slideway-ide.webp" alt="Block-based slideway programming interface: block menu on the left, workspace in the middle, generated code on the right and run output below" />
+  <figcaption>The slideway programming interface (click to enlarge)</figcaption>
+</figure>
 
-This project provides a complete graphical programming environment, including a modular programming area, an auto-generated code panel (for advanced users to debug and inspect), and a run output area. It offers real-time slideway status monitoring and code debugging capabilities, along with project save and import support.
+The system is a complete graphical programming environment: a block-programming workspace, a generated-code panel (for advanced users to debug and inspect) and a results panel. It monitors slideway state in real time, supports debugging, and lets projects be saved and imported.
 
-## 3. Project Background
+## Background
 
-The **Physical Experiment System** requires the drilling platform to process wood, performing operations such as drilling holes at precise intervals. Therefore, a 2D slideway system capable of precise movement is essential. Providing an intuitive user control interface for users with no technical background became a major challenge. This project was born out of that requirement and successfully addressed it.
+The physical experiment system machines wood on a drilling platform and needs operations such as drilling at precise spacings, so a 2D slideway that can move precisely is essential. The difficulty was giving users with no technical background an interface they could pick up. This project was built to meet that need.
 
-## 4. Requirements Analysis
+## Requirements
 
-**Functional requirements**: Precise slideway movement control, full modular programming functionality, code transpilation display panel, real-time system status display, and project export/import.
+**Functional**
 
-**Non-functional requirements**: Anti-interference measures during communication with the motor controller, slideway motor limit protection scheme, and long-term resilience of the overall system to high-vibration and high-dust environments.
+- Precise slideway movement control
+- Full block-programming functionality
+- Code translation and display
+- Real-time system status
+- Project export and import
 
-## 5. Development Workflow
+**Non-functional**
 
-```mermaid
-flowchart TD
-	A[分析需求和现有硬件]-->B
-	B[寻找电机控制器资料]-->C
-	C[根据资料调试电机控制器]-->D
-	D[设计并实现电机控制API]-->E
-	E[构建模块化编程网页]-->F
-	F[实现网页后端对API的调用]-->G
-	G[升级API支持实时状态返回]-->H
-	H[打包调试]
-```
+- Interference resistance when communicating with the motor controller
+- Limit protection for the slideway motors
+- Long-term operation in a high-vibration, high-dust environment
 
-## 6. Technology Stack
+## Development Workflow
 
-**Hardware control**: Python + pyserial library for serial communication.
+<Diagram name="flow-slideway" caption="Development workflow of the slideway control system" wide />
 
-**Web frontend**: Vanilla JavaScript + Blockly library for the modular programming interface.
+## Technology
 
-**Web backend**: Python + Flask to provide the web interface and hardware control API endpoints.
+| Layer | Technology |
+|---|---|
+| **Hardware control** | Python + pyserial for serial communication |
+| **Web front end** | Vanilla JavaScript + Blockly for the block-programming interface |
+| **Web back end** | Python + Flask, serving the web page and the hardware-control API |
 
-## 7. Implementation and Technical Challenges
+## Implementation Challenges
 
-### 7.1. Hardware Challenges
+### Hardware
 
-**Development challenges**: Use of second-hand products resulted in ambiguous motor controller model numbers and missing documentation.
+| Area | Challenge |
+|---|---|
+| **Development** | The second-hand motor controller's model was unclear and documentation was missing |
+| **Engineering** | The slideway is heavy, which made wiring and installation hard |
+| **Requirements** | High-bit-rate communication needed interference handling; the whole system had to be sturdy enough to survive transport and the continuous vibration and dust from the drilling platform |
 
-**Engineering challenges**: The overall slideway system is heavy, making wiring and other installation steps difficult.
+### Software
 
-**Requirements challenges**: High baud-rate communication requires resolving signal interference issues; the overall system must be highly robust, capable of withstanding the jolts of transportation and the sustained vibration and dust generated by the drilling platform.
+| Layer | Challenge |
+|---|---|
+| **Hardware control** | Synchronising motor commands, calibrating motor coordinates, time-division motor control, handling serial packet loss, restarting after limit protection trips |
+| **Web front end** | Designing the block-programming interface; custom block logic |
+| **Back end** | Letting user programs call the motor-control API; real-time status monitoring |
 
-### 7.2. Software Challenges
+## User Interface
 
-**Hardware control**: Motor command synchronization, motor coordinate calibration, time-division motor control, serial packet loss handling, and motor limit protection restart.
+<figure class="w-100">
+  <img src="./assets/slideway-ide-annotated.webp" alt="The programming interface with five regions outlined in red and numbered: block menu, block workspace, menu bar, generated code and run results" />
+  <figcaption>Interface regions (click to enlarge)</figcaption>
+</figure>
 
-**Web frontend**: Modular programming interface design and custom code block logic.
+1. **Block menu**: basic logic, loops, maths, string operations, variables, functions and slideway control.
+2. **Block workspace**: drag blocks from the menu and arrange them to write a program.
+3. **Menu bar**: project export and import, and the run button.
+4. **Generated code**: live code generated from the block program, for advanced users to debug and inspect.
+5. **Run results**: run messages and slideway state, returned in real time.
 
-**System backend**: Calling the motor control API from user-written programs, and real-time status monitoring.
+## Results
 
-## 8. User Interface and Experience
+The system is deployed in the real experimental environment as part of the physical experiment system (for how long, see the [overview](./experiment-system#project-outcomes)). The most recent inspection confirmed that all functions were still working after three months in a high-vibration, high-dust environment. Users report that the block-programming interface is intuitive and concise and covers all functional requirements.
 
-<div style="text-align:center;"><img src="./assets/slideway/image-20251205165251168.png" style="width:100%;" /></div>
+## Personal Contributions
 
-1. Code block menu bar — provides basic logic, loops, math operations, string operations, variables, functions, and slideway control blocks.
-2. Modular programming area — users program by dragging and combining blocks from the menu bar.
-3. Menu bar — includes project export/import functions and the run button.
-4. Generated code panel — displays in real time the code generated from the user's modular program, for advanced users to debug and inspect.
-5. Run output area — returns real-time run information and slideway status based on program execution results.
+This project was completed by Peler, apart from procuring the slideway.
 
-## 9. Project Outcomes
+| Area | Scope |
+|---|---|
+| **Hardware** | Wiring, reinforcing the slideway, adding USB-to-serial converters, debugging the motor controller |
+| **Software** | Low-level motor-control API, block-programming front end, web back end |
+| **Integration** | Finding documentation and debugging the motor controller, developing and testing the system, writing documentation |
 
-To date, this project has been in stable operation in the actual experimental environment for over four months, supporting dozens of experimental sample fabrication sessions. The most recent inspection confirmed that after three months of high-vibration and high-dust conditions, all system functions remain fully operational. User feedback indicates that the modular programming interface is intuitive and concise, covering all functional requirements.
-
-## 10. Personal Contributions
-
-This project was completed entirely by Peler except for the slideway procurement, including:
-
-**Hardware**: Wiring, reinforcing the slideway, adding USB-to-serial converters, and debugging the motor controller.
-
-**Software**: Low-level motor control API, modular programming frontend, and web backend.
-
-**General**: Locating documentation and debugging the motor controller, developing and testing the system, and writing documentation.
-
-***In addition, Hank assisted with wiring and transportation, saving considerable time and effort on the hardware development side.***
+Hank helped with the wiring and with moving the system, which saved a great deal of time and effort in hardware development.

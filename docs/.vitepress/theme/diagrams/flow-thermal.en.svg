@@ -1,0 +1,50 @@
+<svg class="flow" viewBox="0 0 1112 224" role="img" aria-labelledby="flow-thermal-en-t flow-thermal-en-d" data-min-width="800">
+<title id="flow-thermal-en-t">Development workflow: thermal image analysis</title>
+<desc id="flow-thermal-en-d">Analyse requirements and existing hardware → Find thermal-imager documentation → Try the built-in LAN transfer → Use the built-in LAN transfer → Install and debug the vendor software → Develop new software → Inspect the thermal image transfer format → Implement video stream encoding → Implement dynamic temperature analysis → Package and debug</desc>
+<defs><marker id="flow-thermal-en-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 1L9 5L0 9Z" class="flow__arrowhead"/></marker></defs>
+<path class="flow__arrow" d="M202 50.0H237" marker-end="url(#flow-thermal-en-arrow)"/>
+<path class="flow__arrow" d="M426 50.0H461" marker-end="url(#flow-thermal-en-arrow)"/>
+<path class="flow__arrow" d="M650 50.0H685" marker-end="url(#flow-thermal-en-arrow)"/>
+<rect class="flow__tagbg" x="641.8" y="31.0" width="52.4" height="18" rx="9"/><text class="flow__tag" x="668.0" y="44.0" text-anchor="middle">Works</text>
+<path class="flow__arrow" d="M874 50.0H909" marker-end="url(#flow-thermal-en-arrow)"/>
+<path class="flow__arrow" d="M556.0 86V112.0H108.0V137" marker-end="url(#flow-thermal-en-arrow)"/>
+<rect class="flow__tagbg" x="284.0" y="95.0" width="96.1" height="18" rx="9"/><text class="flow__tag" x="332.0" y="108.0" text-anchor="middle">Unavailable</text>
+<path class="flow__arrow" d="M202 174.0H237" marker-end="url(#flow-thermal-en-arrow)"/>
+<path class="flow__arrow" d="M426 174.0H461" marker-end="url(#flow-thermal-en-arrow)"/>
+<path class="flow__arrow" d="M650 174.0H685" marker-end="url(#flow-thermal-en-arrow)"/>
+<path class="flow__arrow" d="M874 174.0H909" marker-end="url(#flow-thermal-en-arrow)"/>
+<rect class="flow__node" x="14" y="14" width="188" height="72" rx="12"/>
+<text class="flow__label" x="108.0" y="36.0">Analyse</text>
+<text class="flow__label" x="108.0" y="55.0">requirements and</text>
+<text class="flow__label" x="108.0" y="74.0">existing hardware</text>
+<rect class="flow__node" x="238" y="14" width="188" height="72" rx="12"/>
+<text class="flow__label" x="332.0" y="36.0">Find</text>
+<text class="flow__label" x="332.0" y="55.0">thermal-imager</text>
+<text class="flow__label" x="332.0" y="74.0">documentation</text>
+<polygon class="flow__node flow__node--decision" points="480,14 632,14 650,50.0 632,86 480,86 462,50.0"/>
+<text class="flow__label" x="556.0" y="45.5">Try the built-in</text>
+<text class="flow__label" x="556.0" y="64.5">LAN transfer</text>
+<rect class="flow__node" x="686" y="14" width="188" height="72" rx="12"/>
+<text class="flow__label" x="780.0" y="45.5">Use the built-in</text>
+<text class="flow__label" x="780.0" y="64.5">LAN transfer</text>
+<rect class="flow__node flow__node--end" x="910" y="14" width="188" height="72" rx="12"/>
+<text class="flow__label" x="1004.0" y="36.0">Install and debug</text>
+<text class="flow__label" x="1004.0" y="55.0">the vendor</text>
+<text class="flow__label" x="1004.0" y="74.0">software</text>
+<rect class="flow__node" x="14" y="138" width="188" height="72" rx="12"/>
+<text class="flow__label" x="108.0" y="169.5">Develop new</text>
+<text class="flow__label" x="108.0" y="188.5">software</text>
+<rect class="flow__node" x="238" y="138" width="188" height="72" rx="12"/>
+<text class="flow__label" x="332.0" y="160.0">Inspect the</text>
+<text class="flow__label" x="332.0" y="179.0">thermal image</text>
+<text class="flow__label" x="332.0" y="198.0">transfer format</text>
+<rect class="flow__node" x="462" y="138" width="188" height="72" rx="12"/>
+<text class="flow__label" x="556.0" y="169.5">Implement video</text>
+<text class="flow__label" x="556.0" y="188.5">stream encoding</text>
+<rect class="flow__node" x="686" y="138" width="188" height="72" rx="12"/>
+<text class="flow__label" x="780.0" y="160.0">Implement dynamic</text>
+<text class="flow__label" x="780.0" y="179.0">temperature</text>
+<text class="flow__label" x="780.0" y="198.0">analysis</text>
+<rect class="flow__node flow__node--end" x="910" y="138" width="188" height="72" rx="12"/>
+<text class="flow__label" x="1004.0" y="179.0">Package and debug</text>
+</svg>

@@ -1,145 +1,132 @@
 # Physical Experiment System Overview
 
-## 1. Project Overview
+## At a Glance
 
-This project aims to build an integrated experiment system combining sample processing and data recording, designed to support the doctoral research of Dr. Lukas. The system comprises an industrial control computer, a drilling platform, a 2D slideway, pressure sensors, a torque sensor, an infrared thermal imager, and a dial indicator. It is primarily used to record pressure, torque, temperature, and deformation data generated during wood processing under various conditions. The entire project — except for certain hardware procurement — was completed solely by Peler. The system has been in stable operation for over four months, supporting dozens of experimental sample processing and data recording sessions.
+| | |
+|---|---|
+| **Purpose** | Drill wood samples while recording the pressure, torque, temperature and displacement produced during machining |
+| **Client** | Dr. Lukas's doctoral research on how wood-processing methods affect structural stability |
+| **Components** | Industrial control computer, drilling platform, 2D slideway, pressure sensors, torque sensor, infrared thermal imager, dial indicator |
+| **Status** | In service for over four months, supporting dozens of sample-processing and data-recording sessions |
+| **Role** | Apart from some hardware procurement, system design, software development, installation, commissioning and maintenance were all carried out by Peler |
 
-## 2. Project Highlights
+## Design Goals
 
-**Integration**: All components are connected to the industrial control computer for unified control and coordination, providing a one-stop solution for experimental sample processing and data acquisition.
+- **Integration**: every component connects to one industrial control computer, so sample processing and data acquisition happen at a single workstation.
+- **Ease of use**: every function has a graphical interface (including the graphical slideway programming system), backed by user manuals, to keep the learning curve low.
+- **Low cost**: most components are second-hand. Missing documentation made development harder, but the savings were significant.
+- **Maintainability**: modules are clearly labelled, and wiring and common issues are recorded in the development notes so technicians can inspect and repair the system quickly.
+- **Stability**: the system has to run for long periods in a high-vibration, high-dust environment; see [Project Outcomes](#project-outcomes) for how it has held up.
 
-**Ease of Use**: All functions are delivered with out-of-the-box graphical user interfaces (including a graphical slideway programming system), combined with user manuals to minimize the learning curve.
+## Background
 
-**Low Cost**: Most components in the system are second-hand. While this increased development difficulty due to limited documentation, it significantly reduced costs.
+Dr. Lukas's doctoral research studies how different wood-processing methods affect the overall structural stability of wood. That calls for a system that combines wood processing with data recording. The drilling platform and its 2D slideway control the drilling position precisely, while pressure and torque sensors mounted on the slideway's stage record data in real time for later mathematical analysis. The infrared thermal imager and the dial indicator add thermal-image analysis and real-time displacement recording when needed.
 
-**Maintainability**: Each module of the system is clearly labeled, with detailed development records covering wiring methods and common issues, enabling technicians to perform quick inspections and maintenance.
+Because the experiments are unusual, no off-the-shelf system exists. The budget was also limited, so most equipment is second-hand, with missing documentation and no technical support. The central challenge was to bring every component up, integrate them into one industrial control system, make the drilling platform and the 2D slideway work together, and collect all sensor data in real time.
 
-**Stability**: The system has been in stable operation for over four months, successfully withstanding high-vibration and high-dust environments while supporting dozens of experiments.
+## System Architecture
 
-## 3. Project Background
+<Diagram name="rig" caption="System architecture. Dashed lines carry data and signals; dotted lines carry power." />
 
-In Dr. Lukas's doctoral research, it is necessary to study the effects of different wood processing methods on the overall structural stability of wood. Therefore, an integrated wood processing and data recording system is essential. The drilling platform and the accompanying 2D slideway system enable precise control over the drilling position on the wood. Pressure and torque sensors mounted on the slideway platform provide real-time data recording for subsequent mathematical analysis. In addition, the infrared thermal imager and dial indicator can collect corresponding data when needed, providing infrared thermal image analysis and real-time displacement recording. Due to the originality of the experiments, no mature off-the-shelf system solution is currently available on the market. Furthermore, due to budget constraints, most equipment is second-hand, presenting challenges such as missing documentation and lack of technical support. Successfully driving each component of the experiment system and ultimately integrating them into an industrial control system — enabling collaboration between the drilling platform and the 2D slideway, and achieving real-time aggregation of sensor data — are the key challenges this project needed to overcome.
+<figure class="w-70">
+  <img src="./assets/rig-annotated-zh.webp" alt="Photograph of the assembled system with labels for the industrial control computer, laboratory power supply, infrared thermometer, torque sensor, pressure sensor, drilling platform, scrap bin and 2D slideway" />
+  <figcaption>The assembled system (click to enlarge; labels are in Chinese). Taken during development and commissioning, so clutter is still on the drilling platform. The dial indicator is not shown because it is used in a different setup.</figcaption>
+</figure>
 
-## 4. Requirements Analysis
+## Requirements
 
-### Industrial Control Computer
+| Subsystem | Starting situation | Requirement |
+|---|---|---|
+| **Industrial control computer** | Must run several experiment programs at once; thermal-image analysis is CPU-intensive | A stable Windows 10 distribution; at least 4 GB of RAM; a reasonably modern CPU |
+| **Drilling platform** | Has its own built-in control system, but the machining data of each run must be measured and calculated separately | Adjust the drill-bit height to leave enough clearance for the 2D slideway |
+| **2D slideway** | Several motors are driven in time-division through USB-to-serial converters; the structure must survive transport and long periods of vibration and dust from the drilling platform | Synchronised, precise motor movement exposed as an API; stable wiring and structure; a graphical programming interface that non-technical users can pick up quickly |
+| **Pressure sensors** | Four sensors with the manufacturer's acquisition unit; the device model does not match the hardware, the wiring was disorganised, and no documentation or support was available | Ready-to-use host software that transmits, displays and records data in real time |
+| **Torque sensor** | The manufacturer supplies host software but support is hard to reach; needs its own 220 V supply and otherwise connects to the computer over USB | Ready-to-use host software that transmits, displays and records data in real time |
+| **Infrared thermal imager** | Has a built-in LAN transfer function, but the second-hand unit's administrator password was lost, so it cannot be used | Transfer over a USB-C cable long enough for the actual layout; host software that transmits and records thermal images in real time and analyses temperatures at specific points |
+| **Dial indicator** | The manufacturer provides clear documentation but charges for its software, which the budget did not allow; needs an extra USB-to-serial converter between the decoder and the indicator | Custom host software that transmits and displays data in real time, reads at high frequency, and records timestamps so the data can be merged later |
 
-- **Software requirements**: A stable Windows 10 distribution.
-- **Hardware requirements**: At least 4 GB of RAM to run multiple experiment software simultaneously, and a reasonably modern CPU to handle the computational demands of infrared thermal image analysis.
+## Subsystems
 
-### Drilling Platform
-
-- **Software requirements**: None; a built-in control system is provided, but processing data must be measured and calculated for each session.
-- **Hardware requirements**: The drill bit height must be adjusted to leave sufficient clearance for the 2D slideway.
-
-### 2D Slideway
-
-- **Software requirements**: Time-division control of different motors via a USB-to-serial converter to achieve synchronized and precise motor movement, with the corresponding functionality encapsulated as an API.
-- **Hardware requirements**: Ensure stable wiring and overall slideway structure, capable of withstanding prolonged high-intensity vibration and heavy dust from transportation and the drilling platform.
-- **User requirements**: Design an intuitive graphical user interface that allows non-technical users to quickly master slideway programming and control.
-
-### Pressure Sensors
-
-- **Software requirements**: The manufacturer provides a hardware acquisition unit and host software, but technical support is difficult to reach and the device model does not match the actual hardware.
-- **Hardware requirements**: Four pressure sensors and the manufacturer's matching acquisition unit, but the wiring is disorganized and unusable, with no accessible documentation.
-- **User requirements**: Provide ready-to-use host software for real-time data transmission, display, and recording.
-
-### Torque Sensor
-
-- **Software requirements**: The manufacturer provides host software, but technical support is difficult to reach.
-- **Hardware requirements**: Requires a dedicated 220V power supply; otherwise connects directly to the computer via USB with no additional configuration.
-- **User requirements**: Provide ready-to-use host software for real-time data transmission, display, and recording.
-
-### Infrared Thermal Imager
-
-- **Software requirements**: The device has a built-in LAN transfer function, but it is unavailable due to a lost administrator password (second-hand unit), requiring an alternative data transfer method.
-- **Hardware requirements**: Since LAN connection is unavailable, a USB-C cable must be used; given the actual setup, the cable must be long enough.
-- **User requirements**: Provide ready-to-use host software for real-time infrared thermal image transfer and recording, with support for temperature data analysis at specific points.
-
-### Dial Indicator
-
-- **Software requirements**: The manufacturer provides clear documentation and paid software; due to budget constraints, custom software must be developed.
-- **Hardware requirements**: Requires an additional USB-to-serial converter to connect the manufacturer's decoder to the dial indicator.
-- **User requirements**: Provide ready-to-use host software for real-time data transmission and display, with particular emphasis on high-frequency reading and corresponding timestamp recording for later data integration.
-
-## 5. System Components
-
-**2D Schematic Diagram**:
-
-<div style="text-align:center;"><img src="./assets/experiment-system/system.png" style="width:50%;" /></div>
-
-## 6. Project Showcase
-
-Due to copyright considerations, this section only showcases software or hardware wiring independently developed by Peler.
+This section covers only the software and wiring that Peler developed independently. Vendor-supplied software is not shown.
 
 ### Industrial Control Computer System
 
-<div style="text-align:center;"><img src="./assets/experiment-system/image-20251206202253490.png" alt="image-20251206202253490" style="width:50%;" /></div>
+<figure class="w-70">
+  <img src="./assets/workstation-desktop.webp" alt="Desktop of the industrial control computer, showing the experiment-and-processing wallpaper and shortcuts to common tools" />
+  <figcaption>Desktop of the industrial control computer</figcaption>
+</figure>
 
-A complete integrated experiment and processing system. Includes all host software and required data analysis tools, with shortcuts to common system management utilities. At the OS level, Windows 10 Enterprise 2021 LTSC is used, deeply optimized via scripts — system updates and other services are disabled to ensure a stable, unchanging environment. See: [Industrial Control Computer System](./industrial-computer).
+All host software and data-analysis tools are installed, with shortcuts to common system-management utilities. The operating system is Windows 10 Enterprise 2021 LTSC, tuned with scripts and with system updates and similar services switched off so that the environment stays stable and unchanged. See [Industrial Control Computer System](./industrial-computer).
 
 ### 2D Slideway Modular Programming Control System
 
-<div style="text-align:center;"><img src="./assets/experiment-system/image-20251205164505709.png" alt="image-20251205164505709" style="width:50%;" /></div>
+<figure class="w-70">
+  <img src="./assets/slideway-ide.webp" alt="Block-based slideway programming interface: block menu on the left, workspace in the middle, generated code on the right and run output below" />
+  <figcaption>The slideway programming interface</figcaption>
+</figure>
 
-A zero-learning-curve modular programming system. Supports console output, loop statements, conditional statements, variables and functions, as well as slideway operations including initialization, homing, precise movement, and speed-based movement. See: [2D Slideway Modular Programming Control System](./slideway).
+A block-based programming system that needs no programming background. It supports console output, loops, conditionals, variables and functions, plus slideway initialisation, homing, precise movement and speed-controlled movement. See [2D Slideway Modular Programming Control System](./slideway).
 
-### Infrared Thermal Image Real-Time Transfer and Analysis System
+### Infrared Thermal Image Transfer and Analysis System
 
-<div style="text-align:center;"><img src="./assets/thermal-imaging/image-20260407021750202.png" alt="image-20260407021750202" style="width:50%;" /></div>
+<figure class="w-50">
+  <img src="./assets/thermal-imaging-ui.webp" alt="Thermal-image software: control window on the left, live thermal preview on the right with the centre point and three measurement points P1 to P3 marked" />
+  <figcaption>The thermal-image software</figcaption>
+</figure>
 
-A streamlined and easy-to-use infrared thermal imaging software. Supports real-time transfer and recording of infrared thermal video from the device, video analysis to extract temperature values at the center point and three user-defined points per frame, and saving of both video and analysis results. See: [Infrared Thermal Image Real-Time Transfer and Analysis System](./thermal-imaging).
+Streams and records thermal video from the device in real time, then analyses it frame by frame to read the temperature at the centre point and at three user-defined points, and saves both the video and the results. See [Infrared Thermal Image Transfer and Analysis System](./thermal-imaging).
 
-### Dial Indicator Real-Time Data Acquisition and Recording System
+### Dial Indicator Data Acquisition and Recording System
 
-<div style="text-align:center;"><img src="./assets/experiment-system/image-20260407015618822.png" style="width:50%;" /></div>
+<figure class="w-70">
+  <img src="./assets/dial-indicator-ui.webp" alt="Dial indicator acquisition software with connection settings, control buttons, a live displacement plot and a data table" />
+  <figcaption>The dial indicator software</figcaption>
+</figure>
 
-A powerful dial indicator data reading software with all the features required for experiments. Supports automatic baud rate detection and matching, dynamic data reading with real-time chart display, and data export. See: [Dial Indicator Real-Time Data Acquisition and Recording System](./dial-indicator).
+Detects and matches the baud rate automatically, reads data continuously and plots it live, and exports the results. See [Dial Indicator Data Acquisition and Recording System](./dial-indicator).
 
-## 7. Overall Implementation and Design Challenges
+## Design and Implementation Challenges
 
-**Design challenges**: The overall system contains many components but the available space is limited. Arranging the limited space to ensure system stability, safety, and usability is a major challenge.
+| Area | Challenge |
+|---|---|
+| **Design** | Many components in a limited space, which must still be stable, safe and easy to use |
+| **Engineering** | The tight space made it hard to move and assemble large items such as the slideway, drilling platform and workbench; the drilling platform needs a dedicated high-power outlet and extra grounding |
+| **Requirements** | Keeping the system compact yet maintainable, and able to run for long periods in a high-vibration, high-dust environment |
+| **Maintenance** | The pressure sensors and the slideway have complex wiring, so cables and connections must be labelled for later repairs |
+| **Software** | Keeping the system and each program stable and compatible, debugging each device, and pre-configuring fixed parameters to keep the learning curve low |
 
-**Engineering challenges**: The limited space makes transporting and assembling large items such as the 2D slideway, drilling platform, and workbench difficult. The drilling platform requires a special high-power outlet and additional grounding.
+## Project Outcomes
 
-**Requirements challenges**: Ensuring the maintainability of the system while keeping it compact overall; the entire system must withstand the high-vibration, high-dust environment generated by the drilling platform for long-term stable operation.
+The system has been formally deployed in the experimental environment for over four months and has supported dozens of sample-processing and data-recording sessions. The most recent inspection, after three months of continuous use, found no faults or latent hazards: all components were working properly and had coped with the high-vibration, high-dust environment.
 
-**Maintenance challenges**: Some components (e.g., pressure sensors, 2D slideway) have complex wiring that must be labeled for future inspection and maintenance.
+## Personal Contributions
 
-**Software challenges**: Ensuring the stability and compatibility of the system and all software, debugging each device, pre-configuring fixed parameters, and minimizing the user learning curve as much as possible.
+| Area | Scope |
+|---|---|
+| **Hardware procurement** | Industrial control computer system, workbench, laboratory power supply, cables and the required USB-to-serial converters |
+| **Software development** | The industrial control computer system as a whole; the 2D slideway programming control system; the thermal-image transfer and analysis system; the dial indicator acquisition and recording system |
+| **Installation and testing** | Workbench, industrial control computer system, torque sensor, pressure sensors, 2D slideway, infrared thermal imager, dial indicator |
+| **Other** | System layout design and installation; periodic inspection and maintenance; development documentation and user manuals |
 
-## 8. Project Outcomes
+Hank helped with the wiring and with moving the system, which saved a great deal of time and effort.
 
-To date, this project has been formally deployed and in operation in the experimental environment for over four months, running stably and supporting dozens of experimental sample fabrication and data recording sessions. According to the most recent inspection, no issues or potential hazards were found after three months of use; all components are functioning properly and have withstood the high-vibration and high-dust environment.
+## Development Gallery
 
-## 9. Personal Contributions
-
-**Hardware procurement**: Industrial control computer system, workbench, lab power supply, cables, and required USB-to-serial converters.
-
-**Software development**: Overall industrial control computer system, 2D slideway modular programming control system, infrared thermal image real-time transfer and analysis system, dial indicator real-time data acquisition and recording system.
-
-**Installation and testing**: Workbench, industrial control computer system, torque sensor, pressure sensors, 2D slideway, infrared thermal imager, dial indicator.
-
-**Miscellaneous**: Overall system layout design and installation, periodic system inspection and maintenance, writing development documentation and user manuals.
-
-## 10. Development Gallery
-
-<div style="text-align:center;"><img src="./assets/experiment-system/image-20251207175325077.png" alt="image-20251207175325077" style="width:33%;" /></div>
-
-<center>It's always a mess at the beginning $#&</center>
-<br />
-
-<div style="text-align:center;"><img src="./assets/experiment-system/71074a0ef4a581ed09c7efd27ff8b435.jpg" alt="71074a0ef4a581ed09c7efd27ff8b435" style="width:25%;" /></div>
-
-<center>This hardware doesn't look open-source...</center>
-<br />
-
-<div style="text-align:center;"><img src="./assets/experiment-system/image-20251207175453683.png" alt="image-20251207175453683" style="width:33%;" /></div>
-
-<center>Taking a break — might as well listen to some music while installing the OS</center>
-<br />
-
-<div style="text-align:center;"><img src="./assets/experiment-system/dcf64484a6c90d2b0af9f955a0745be8.jpg" alt="dcf64484a6c90d2b0af9f955a0745be8" style="width:33%;" /></div>
-
-<center>Glasses or sunglasses?</center>
-<br />
+<div class="figure-row">
+  <figure>
+    <img src="./assets/album-bare-parts.webp" alt="Unassembled slideway sections, motors and cables spread across the floor" />
+    <figcaption>Components before assembly</figcaption>
+  </figure>
+  <figure>
+    <img src="./assets/album-pressure-collector.webp" alt="Open junction box of the pressure-sensor acquisition unit with untidy internal wiring" />
+    <figcaption>Pressure-sensor acquisition unit: tangled wiring and no documentation</figcaption>
+  </figure>
+  <figure>
+    <img src="./assets/album-os-install.webp" alt="The workstation's monitor beside a laptop while the operating system is installed" />
+    <figcaption>Installing the operating system</figcaption>
+  </figure>
+  <figure>
+    <img src="./assets/album-thermal-portrait.webp" alt="Thermal image of a person's face captured by the infrared thermal imager, centre point about 31.6 degrees Celsius" />
+    <figcaption>A test frame from the infrared thermal imager</figcaption>
+  </figure>
+</div>

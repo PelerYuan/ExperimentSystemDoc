@@ -5,10 +5,7 @@ title: 实验系统
 hero:
   name: 物理实验系统
   text: 加工与测量，一个工位完成
-  tagline: 为一项木材力学博士课题，将钻机、二维滑轨与四路传感器统一接入一台工控机。由一人独立设计、搭建并维护。
-  image:
-    src: /hero-system.png
-    alt: 系统布局示意图
+  tagline: 为一项木材力学博士课题，将钻机、二维滑轨与四路传感器统一接入一台工控机。从零开始设计、搭建并维护。
   actions:
     - theme: brand
       text: 系统总览

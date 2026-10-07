@@ -1,59 +1,65 @@
-# Industrial Control Computer System Overview
-
-## 1. Project Overview
+# Industrial Control Computer System
 
 This project is part of the [Physical Experiment System](./experiment-system).
 
-This project aims to provide experimenters with a comprehensive hardware and software solution that connects and controls all hardware in the physical experiment system, enabling one-stop operation, monitoring, data acquisition, and analysis of experimental equipment.
+## Overview
 
-## 2. Project Background
+A hardware and software solution that connects to and controls all the hardware in the physical experiment system, so that experimenters can operate equipment, monitor its state, and collect and analyse data from a single computer.
 
-In the initial design of the **Physical Experiment System**, no industrial control computer was planned to centrally manage all hardware devices. Instead, a laptop was temporarily connected to the required devices before each experiment. However, this approach failed to account for practical issues such as the lack of a suitable place to put the laptop, the complexity of hardware connections and software configuration, and the difficulty of writing experimental records. Consequently, the subsequent design incorporated an industrial control computer to provide a stable hardware configuration that requires no repeated changes or reconfiguration. The workbench design also provides a platform for writing experimental records and temporarily placing tools.
+<figure class="w-70">
+  <img src="./assets/workstation-desktop.webp" alt="Desktop of the industrial control computer, showing the experiment-and-processing wallpaper and shortcuts to common tools" />
+  <figcaption>Desktop of the industrial control computer (click to enlarge)</figcaption>
+</figure>
 
-## 3. Requirements Analysis
+## Background
 
-**Functional requirements**: Sufficient hardware performance to run multiple experiment software simultaneously, and enough USB ports to connect various hardware devices.
+The original design of the physical experiment system had no industrial control computer: a laptop was connected to the required devices before each experiment. In practice this caused several problems: there was nowhere to put the laptop, hardware connections and software configuration were tedious, and it was hard to write up experiment records.
 
-**Non-functional requirements**: Ensure the chassis is appropriately sized, stay within budget, and address thermal management and other system stability concerns to ensure 24/7 continuous operation.
+The revised design therefore added an industrial control computer, giving a stable hardware setup that does not have to be changed or reconfigured. The workbench designed alongside it also provides a surface for writing records and for tools.
 
-## 4. Development Workflow
+## Requirements
 
-```mermaid
-flowchart TD
-	A[分析硬件性能需求]-->B
-	B[采购相应二手元件]-->C
-	C[组装并调试计算机]-->D
-	D[选择并安装操作系统]-->E
-	E[优化系统并安装软件]-->F
-	F[配置软件参数并调试]
-```
+**Functional**
 
-## 5. Technology Stack
+- Enough hardware performance to run several experiment programs at the same time
+- Enough USB ports to connect every device
 
-**System activation**: [Microsoft Activation Scripts (MAS)](https://github.com/massgravel/Microsoft-Activation-Scripts).
+**Non-functional**
 
-**System optimization**: [Chris Titus Tech's WinUtil](https://github.com/ChrisTitusTech/winutil) — used to tune and optimize the system, disable non-essential services, and pause system updates.
+- A case of suitable size; it sits on the workbench to keep dust out, so its size is tightly limited
+- A tight budget
+- Cooling and other stability factors that allow 24/7 operation
 
-## 6. Implementation and Technical Challenges
+## Development Workflow
 
-**Development challenges**: All hardware is low-cost and second-hand due to budget constraints; ensuring hardware longevity and compatibility is critical.
+<Diagram name="flow-ipc" caption="Development workflow of the industrial control computer system" />
 
-**Engineering challenges**: Sourcing suitable second-hand hardware is difficult, requiring careful evaluation of price-to-performance ratio and authenticity verification.
+## Technology
 
-**Requirements challenges**: The chassis must be placed on the workbench to isolate it from the high-dust environment, imposing strict size constraints.
+| Aspect | Choice |
+|---|---|
+| **Operating system** | Windows 10 Enterprise 2021 LTSC |
+| **System tuning** | [Chris Titus Tech's WinUtil](https://github.com/ChrisTitusTech/winutil): disables non-essential services and pauses system updates |
 
-**Software challenges**: Some second-hand experimental devices lack documentation and software manuals, requiring issues to be resolved entirely through experience.
+## Implementation Challenges
 
-## 7. Project Outcomes
+| Area | Challenge |
+|---|---|
+| **Development** | The budget meant using cheap second-hand hardware, so lifespan and compatibility had to be ensured |
+| **Engineering** | Finding suitable second-hand hardware is hard: price and performance must be weighed and counterfeits spotted |
+| **Requirements** | The case sits on the workbench to keep dust out, so its size is strictly limited |
+| **Software** | Some second-hand lab devices have no documentation or manual, so errors had to be resolved from experience |
 
-To date, the system has been in stable operation in the actual experimental environment for over four months, supporting dozens of experimental sample fabrication sessions. The most recent inspection confirmed that after three months of exposure to high-vibration and high-dust conditions, all system functions remain fully operational. User feedback indicates a significant improvement in usability compared to the original design, with more convenient data collection and recording and a more organized experimental environment.
+## Results
 
-## 8. Personal Contributions
+The system is deployed in the real experimental environment as part of the physical experiment system (for how long, see the [overview](./experiment-system#project-outcomes)). The most recent inspection confirmed that all functions were still working after three months of use in a high-vibration, high-dust environment. Users report a clear improvement in usability over the original setup, more convenient data collection and recording, and a more orderly lab.
 
-This project was completed entirely by Peler, including:
+## Personal Contributions
 
-**Hardware**: Procurement, assembly, and debugging of computer hardware.
+This project was completed entirely by Peler.
 
-**Software**: Acquisition, installation, and configuration of software; installation and optimization of the operating system.
-
-**General**: Planning the workbench layout, placing the industrial control computer, and configuring the monitor, keyboard, and mouse.
+| Area | Scope |
+|---|---|
+| **Hardware** | Procuring, assembling and debugging the computer hardware |
+| **Software** | Obtaining, installing and configuring software; installing and tuning the operating system |
+| **Integration** | Planning the workbench layout, placing the computer and setting up the monitor, keyboard and mouse |
