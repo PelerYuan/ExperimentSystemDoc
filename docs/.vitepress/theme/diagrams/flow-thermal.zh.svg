@@ -1,0 +1,41 @@
+<svg class="flow" viewBox="0 0 1112 224" role="img" aria-labelledby="flow-thermal-zh-t flow-thermal-zh-d" data-min-width="800">
+<title id="flow-thermal-zh-t">开发流程：红外热图分析系统</title>
+<desc id="flow-thermal-zh-d">分析需求和现有硬件 → 查找红外温感资料 → 尝试内置局域网传输功能 → 使用内置局域网传输功能 → 安装并调试相应软件 → 重新开发软件 → 调试观察红外热图传输格式 → 实现红外热图视频流编码 → 实现特定点温度动态分析 → 打包调试</desc>
+<defs><marker id="flow-thermal-zh-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 1L9 5L0 9Z" class="flow__arrowhead"/></marker></defs>
+<path class="flow__arrow" d="M202 50.0H237" marker-end="url(#flow-thermal-zh-arrow)"/>
+<path class="flow__arrow" d="M426 50.0H461" marker-end="url(#flow-thermal-zh-arrow)"/>
+<path class="flow__arrow" d="M650 50.0H685" marker-end="url(#flow-thermal-zh-arrow)"/>
+<rect class="flow__tagbg" x="647.0" y="31.0" width="42.0" height="18" rx="9"/><text class="flow__tag" x="668.0" y="44.0" text-anchor="middle">可用</text>
+<path class="flow__arrow" d="M874 50.0H909" marker-end="url(#flow-thermal-zh-arrow)"/>
+<path class="flow__arrow" d="M556.0 86V112.0H108.0V137" marker-end="url(#flow-thermal-zh-arrow)"/>
+<rect class="flow__tagbg" x="304.5" y="95.0" width="55.0" height="18" rx="9"/><text class="flow__tag" x="332.0" y="108.0" text-anchor="middle">不可用</text>
+<path class="flow__arrow" d="M202 174.0H237" marker-end="url(#flow-thermal-zh-arrow)"/>
+<path class="flow__arrow" d="M426 174.0H461" marker-end="url(#flow-thermal-zh-arrow)"/>
+<path class="flow__arrow" d="M650 174.0H685" marker-end="url(#flow-thermal-zh-arrow)"/>
+<path class="flow__arrow" d="M874 174.0H909" marker-end="url(#flow-thermal-zh-arrow)"/>
+<rect class="flow__node" x="14" y="14" width="188" height="72" rx="12"/>
+<text class="flow__label" x="108.0" y="55.0">分析需求和现有硬件</text>
+<rect class="flow__node" x="238" y="14" width="188" height="72" rx="12"/>
+<text class="flow__label" x="332.0" y="55.0">查找红外温感资料</text>
+<polygon class="flow__node flow__node--decision" points="480,14 632,14 650,50.0 632,86 480,86 462,50.0"/>
+<text class="flow__label" x="556.0" y="45.5">尝试内置局域网传输</text>
+<text class="flow__label" x="556.0" y="64.5">功能</text>
+<rect class="flow__node" x="686" y="14" width="188" height="72" rx="12"/>
+<text class="flow__label" x="780.0" y="45.5">使用内置局域网传输功</text>
+<text class="flow__label" x="780.0" y="64.5">能</text>
+<rect class="flow__node flow__node--end" x="910" y="14" width="188" height="72" rx="12"/>
+<text class="flow__label" x="1004.0" y="55.0">安装并调试相应软件</text>
+<rect class="flow__node" x="14" y="138" width="188" height="72" rx="12"/>
+<text class="flow__label" x="108.0" y="179.0">重新开发软件</text>
+<rect class="flow__node" x="238" y="138" width="188" height="72" rx="12"/>
+<text class="flow__label" x="332.0" y="169.5">调试观察红外热图传输</text>
+<text class="flow__label" x="332.0" y="188.5">格式</text>
+<rect class="flow__node" x="462" y="138" width="188" height="72" rx="12"/>
+<text class="flow__label" x="556.0" y="169.5">实现红外热图视频流编</text>
+<text class="flow__label" x="556.0" y="188.5">码</text>
+<rect class="flow__node" x="686" y="138" width="188" height="72" rx="12"/>
+<text class="flow__label" x="780.0" y="169.5">实现特定点温度动态分</text>
+<text class="flow__label" x="780.0" y="188.5">析</text>
+<rect class="flow__node flow__node--end" x="910" y="138" width="188" height="72" rx="12"/>
+<text class="flow__label" x="1004.0" y="179.0">打包调试</text>
+</svg>

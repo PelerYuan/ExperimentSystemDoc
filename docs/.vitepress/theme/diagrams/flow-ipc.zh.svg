@@ -1,0 +1,31 @@
+<svg class="flow" viewBox="0 0 664 224" role="img" aria-labelledby="flow-ipc-zh-t flow-ipc-zh-d" data-min-width="520">
+<title id="flow-ipc-zh-t">开发流程：工控计算机系统</title>
+<desc id="flow-ipc-zh-d">分析硬件性能需求 → 采购相应二手元件 → 组装并调试计算机 → 选择并安装操作系统 → 优化系统并安装软件 → 配置软件参数并调试</desc>
+<defs><marker id="flow-ipc-zh-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 1L9 5L0 9Z" class="flow__arrowhead"/></marker></defs>
+<path class="flow__arrow" d="M202 50.0H237" marker-end="url(#flow-ipc-zh-arrow)"/>
+<path class="flow__arrow" d="M426 50.0H461" marker-end="url(#flow-ipc-zh-arrow)"/>
+<path class="flow__arrow" d="M556.0 86V112.0H108.0V137" marker-end="url(#flow-ipc-zh-arrow)"/>
+<path class="flow__arrow" d="M202 174.0H237" marker-end="url(#flow-ipc-zh-arrow)"/>
+<path class="flow__arrow" d="M426 174.0H461" marker-end="url(#flow-ipc-zh-arrow)"/>
+<rect class="flow__node" x="14" y="14" width="188" height="72" rx="12"/>
+<circle class="flow__num-ring" cx="36" cy="50.0" r="11"/><text class="flow__num" x="36" y="54.0">1</text>
+<text class="flow__label" x="124.0" y="55.0">分析硬件性能需求</text>
+<rect class="flow__node" x="238" y="14" width="188" height="72" rx="12"/>
+<circle class="flow__num-ring" cx="260" cy="50.0" r="11"/><text class="flow__num" x="260" y="54.0">2</text>
+<text class="flow__label" x="348.0" y="55.0">采购相应二手元件</text>
+<rect class="flow__node" x="462" y="14" width="188" height="72" rx="12"/>
+<circle class="flow__num-ring" cx="484" cy="50.0" r="11"/><text class="flow__num" x="484" y="54.0">3</text>
+<text class="flow__label" x="572.0" y="55.0">组装并调试计算机</text>
+<rect class="flow__node" x="14" y="138" width="188" height="72" rx="12"/>
+<circle class="flow__num-ring" cx="36" cy="174.0" r="11"/><text class="flow__num" x="36" y="178.0">4</text>
+<text class="flow__label" x="124.0" y="169.5">选择并安装操作系</text>
+<text class="flow__label" x="124.0" y="188.5">统</text>
+<rect class="flow__node" x="238" y="138" width="188" height="72" rx="12"/>
+<circle class="flow__num-ring" cx="260" cy="174.0" r="11"/><text class="flow__num" x="260" y="178.0">5</text>
+<text class="flow__label" x="348.0" y="169.5">优化系统并安装软</text>
+<text class="flow__label" x="348.0" y="188.5">件</text>
+<rect class="flow__node" x="462" y="138" width="188" height="72" rx="12"/>
+<circle class="flow__num-ring" cx="484" cy="174.0" r="11"/><text class="flow__num" x="484" y="178.0">6</text>
+<text class="flow__label" x="572.0" y="169.5">配置软件参数并调</text>
+<text class="flow__label" x="572.0" y="188.5">试</text>
+</svg>

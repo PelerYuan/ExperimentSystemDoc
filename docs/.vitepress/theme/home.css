@@ -1,0 +1,107 @@
+/* ---------- Home ---------- */
+
+/* Dot-grid backdrop with a soft accent glow, echoing the personal site */
+.VPHero { position: relative; }
+.VPHero::before {
+  content: ''; position: absolute; inset: -80px 0 -40px; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(60% 55% at 78% 30%, color-mix(in srgb, var(--vp-c-brand-1) 14%, transparent), transparent 70%),
+    radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--vp-c-text-1) 12%, transparent) 1px, transparent 1.2px) 0 0 / 22px 22px;
+  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent);
+  mask-image: linear-gradient(to bottom, #000 55%, transparent);
+}
+
+.VPHero .heading { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+.VPHero .name.clip {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 5px 12px; border-radius: 999px;
+  border: 1px solid var(--vp-c-divider); background: var(--vp-c-surface);
+  font-family: var(--vp-font-family-mono); font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+  line-height: 1.2; color: var(--vp-c-text-2); -webkit-text-fill-color: currentColor; -webkit-background-clip: border-box; background-clip: border-box;
+}
+.VPHero .name.clip::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--vp-c-brand-1); box-shadow: 0 0 0 3px var(--vp-c-brand-soft); }
+.VPHero .text {
+  font-family: var(--font-display); font-weight: 650; letter-spacing: -0.04em; line-height: 1.06;
+  font-size: clamp(38px, 5.2vw, 64px); max-width: 640px; color: var(--vp-c-text-1);
+}
+.VPHero .tagline { max-width: 520px; font-size: 18px; line-height: 1.65; color: var(--vp-c-text-2); font-weight: 400; }
+.VPHero .actions { gap: 10px; }
+.VPButton { border-radius: 999px !important; font-weight: 550; padding: 0 22px !important; transition: transform 0.3s var(--ease-out), background-color 0.2s, border-color 0.2s !important; }
+.VPButton:hover { transform: translateY(-1px); }
+.VPButton.brand { background: var(--vp-c-text-1); border-color: var(--vp-c-text-1); color: var(--vp-c-bg); }
+.VPButton.brand:hover { background: var(--vp-c-brand-1); border-color: var(--vp-c-brand-1); color: #fff; }
+.VPButton.alt { background: transparent; border: 1px solid var(--vp-c-border); color: var(--vp-c-text-1); }
+.VPButton.alt:hover { border-color: var(--vp-c-text-1); }
+
+/* Hero diagram: a framed instrument panel */
+.hero-diagram.diagram {
+  width: 100%; margin: 0; padding: 18px; border-radius: 22px;
+  border: 1px solid var(--vp-c-divider); background: var(--vp-c-surface); box-shadow: var(--shadow-card);
+}
+.hero-diagram .diagram__scroll { padding: 0; overflow: visible; }
+.hero-diagram .diagram__canvas { min-width: 0; width: 100%; }
+.VPHero .image-container { display: block !important; width: 100%; height: auto !important; transform: none !important; }
+.VPHero .image { width: 100%; max-width: 580px; margin: 36px auto 0; }
+.VPHero .image-bg { display: none; }
+@media (min-width: 960px) {
+  .VPHero.has-image .image { margin: 0; max-width: none; }
+  .VPHero.has-image .container { align-items: center; }
+}
+@media (max-width: 639px) { .VPHero .image { display: none; } }
+
+/* Entrance */
+@media (prefers-reduced-motion: no-preference) {
+  .VPHero .name, .VPHero .text, .VPHero .tagline, .VPHero .actions, .hero-diagram, .home-stats {
+    animation: rise 0.8s var(--ease-out) both;
+  }
+  .VPHero .text { animation-delay: 0.06s; }
+  .VPHero .tagline { animation-delay: 0.12s; }
+  .VPHero .actions { animation-delay: 0.18s; }
+  .hero-diagram { animation-delay: 0.14s; }
+  .home-stats { animation-delay: 0.26s; }
+}
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+/* ---------- Stat strip ---------- */
+.home-stats { max-width: 1152px; margin: 8px auto 40px; padding: 0 24px; }
+.home-stats__inner {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--vp-c-divider); border-radius: 20px; background: var(--vp-c-surface); overflow: hidden;
+}
+.home-stats__item { padding: 22px 24px; border-left: 1px solid var(--vp-c-divider); }
+.home-stats__item:first-child { border-left: 0; }
+.home-stats__num { font-family: var(--font-display); font-size: 36px; font-weight: 650; letter-spacing: -0.04em; line-height: 1; color: var(--vp-c-text-1); }
+.home-stats__num sup { font-size: 0.5em; vertical-align: top; margin-left: 2px; color: var(--vp-c-brand-1); }
+.home-stats__label { margin-top: 8px; font-size: 13px; line-height: 1.45; color: var(--vp-c-text-2); }
+@media (max-width: 768px) {
+  .home-stats__inner { grid-template-columns: repeat(2, 1fr); }
+  .home-stats__item:nth-child(3) { border-left: 0; }
+  .home-stats__item:nth-child(n + 3) { border-top: 1px solid var(--vp-c-divider); }
+}
+
+/* ---------- Feature cards ---------- */
+.VPFeatures { counter-reset: feat; }
+.VPFeatures .container { max-width: 1152px !important; }
+.VPFeature {
+  counter-increment: feat; height: 100%;
+  border: 1px solid var(--vp-c-divider) !important; border-radius: 20px !important;
+  background: var(--vp-c-surface) !important;
+  transition: transform 0.45s var(--ease-out), border-color 0.25s, box-shadow 0.45s var(--ease-out);
+}
+.VPFeature:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--vp-c-brand-1) 55%, var(--vp-c-divider)) !important; box-shadow: var(--shadow-card); }
+.VPFeature .box { padding: 26px !important; }
+.VPFeature .icon { display: none !important; }
+.VPFeature .title { font-family: var(--font-display); font-size: 18px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.3; }
+.VPFeature .title::before {
+  content: '0' counter(feat); display: block; margin-bottom: 22px;
+  font-family: var(--vp-font-family-mono); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; color: var(--vp-c-brand-1);
+}
+.VPFeature .details { font-size: 14.5px; line-height: 1.65; color: var(--vp-c-text-2); }
+.VPFeature .link-text { color: var(--vp-c-text-1); font-weight: 550; font-size: 14px; }
+.VPFeature:hover .link-text { color: var(--vp-c-brand-1); }
+.VPFeature .link-text-icon { transition: transform 0.3s var(--ease-out); }
+.VPFeature:hover .link-text-icon { transform: translateX(3px); }
+
+/* Balanced line breaks so Chinese and English headings never strand a word */
+html:lang(en-US) .VPHero .text { text-wrap: balance; }
+.VPHero .tagline, .VPFeature .details { text-wrap: pretty; }
