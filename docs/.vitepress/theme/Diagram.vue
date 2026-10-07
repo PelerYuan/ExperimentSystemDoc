@@ -2,6 +2,7 @@
 import { computed, onBeforeUnmount, ref, watch } from 'vue'
 import { useData } from 'vitepress'
 
+defineOptions({ inheritAttrs: false })
 const props = defineProps<{ name: string; caption?: string; wide?: boolean; static?: boolean }>()
 const { lang } = useData()
 const open = ref(false)
@@ -30,7 +31,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <figure class="diagram" :class="{ 'diagram--wide': wide, 'diagram--zoomable': !static }">
+  <figure v-bind="$attrs" class="diagram" :class="{ 'diagram--wide': wide, 'diagram--zoomable': !static }">
     <div
       class="diagram__scroll"
       :role="static ? undefined : 'button'"

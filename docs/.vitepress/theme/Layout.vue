@@ -9,7 +9,7 @@ const { Layout } = DefaultTheme
 <template>
   <Layout>
     <template #home-hero-image>
-      <Diagram name="rig" class="hero-diagram" static />
+      <Diagram name="rig" class="hero-diagram" />
     </template>
     <template #home-features-before>
       <Stats />
