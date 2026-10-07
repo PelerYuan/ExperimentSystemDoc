@@ -103,7 +103,7 @@ html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 .vp-doc table:has(thead th:first-child:empty) td:first-child strong { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--vp-c-text-3); }
 @media (max-width: 640px) {
   .vp-doc table { display: block; overflow-x: auto; }
-  .vp-doc td:first-child { white-space: normal; width: auto; }
+  .vp-doc td:first-child { white-space: normal; width: auto; min-width: 5.5em; }
 }
 
 /* ---------- Outline (right rail) ---------- */

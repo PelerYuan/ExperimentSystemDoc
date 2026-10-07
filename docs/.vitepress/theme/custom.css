@@ -49,10 +49,6 @@
 }
 .diagram__scroll { overflow-x: auto; padding: 16px; }
 .diagram__canvas { min-width: 0; }
-@media (max-width: 720px) {
-  .diagram__canvas { min-width: 560px; }
-  .diagram--wide .diagram__canvas { min-width: 720px; }
-}
 .diagram figcaption {
   padding: 10px 16px;
   border-top: 1px solid var(--vp-c-divider);
@@ -99,13 +95,13 @@
 .diagram__hint { color: var(--vp-c-text-3); }
 .diagram-lightbox {
   position: fixed; inset: 0; z-index: 200;
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
   padding: 24px;
   background: color-mix(in srgb, var(--vp-c-bg) 94%, transparent);
   backdrop-filter: blur(6px);
   overflow: auto;
 }
-.diagram-lightbox__body { width: min(96vw, 1500px); }
+.diagram-lightbox__body { width: min(96vw, 1500px); margin: auto; }
 .diagram-lightbox__canvas svg { display: block; width: 100%; height: auto; max-height: 82vh; }
 .diagram-lightbox__caption { margin: 12px 0 0; text-align: center; font-size: 14px; color: var(--vp-c-text-2); }
 .diagram-lightbox__close {
@@ -123,3 +119,11 @@
   object-fit: cover;
 }
 .medium-zoom-image--opened { object-fit: contain !important; }
+
+/* Phones: the enlarged diagram is wider than the screen and can be panned sideways */
+@media (max-width: 720px) {
+  .diagram-lightbox { padding: 64px 12px 24px; -webkit-overflow-scrolling: touch; }
+  .diagram-lightbox__body { width: 900px; max-width: none; flex: none; }
+  .diagram-lightbox__canvas svg { max-height: none; }
+  .diagram__scroll { padding: 12px; }
+}
