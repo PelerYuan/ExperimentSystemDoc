@@ -2,13 +2,13 @@
 
 ## 1. 项目概述
 
-本项目是[物理实验系统](./ExperimentSystem.md)中的一部分。
+本项目是[物理实验系统](./experiment-system)中的一部分。
 
 本项目旨在为实验室及工业环境下的数字式千分表提供一套完整的桌面端上位机解决方案。针对传统测量中手动记录数据效率低、易出错的问题，本项目实现了一个基于 Modbus RTU 协议的通用数据采集软件。用户无需编写任何串口通信脚本，即可通过友好的图形化界面实现设备的快速连接、波特率自动检测、单次/连续数据采集、实时波形显示以及多格式数据导出。
 
 ## 2. 项目亮点展示
 
-<div style="text-align:center;"><img src="./DialIndicatorSystem.assets/image-20260407014715965.png" style="width:50%;" /></div>
+<div style="text-align:center;"><img src="../assets/dial-indicator/image-20260407014715965.png" style="width:50%;" /></div>
 
 本项目提供了一套现代化、高响应速度的 GUI 界面。核心亮点包括：
 

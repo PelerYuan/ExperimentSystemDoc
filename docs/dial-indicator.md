@@ -2,13 +2,13 @@
 
 ## 1. Project Overview
 
-This project is part of the [Physical Experiment System](./ExperimentSystem_en.md).
+This project is part of the [Physical Experiment System](./experiment-system).
 
 This project aims to provide a complete desktop host software solution for digital dial indicators used in laboratory and industrial environments. Targeting the inefficiency and error-proneness of manual data recording in traditional measurement workflows, this project implements a general-purpose data acquisition software based on the Modbus RTU protocol. Without writing any serial communication scripts, users can quickly connect devices, auto-detect baud rates, perform single or continuous data acquisition, view real-time waveforms, and export data in multiple formats — all through a friendly graphical interface.
 
 ## 2. Project Highlights
 
-<div style="text-align:center;"><img src="./DialIndicatorSystem.assets/image-20260407014715965.png" style="width:50%;" /></div>
+<div style="text-align:center;"><img src="./assets/dial-indicator/image-20260407014715965.png" style="width:50%;" /></div>
 
 This project delivers a modern, high-responsiveness GUI. Key highlights include:
 

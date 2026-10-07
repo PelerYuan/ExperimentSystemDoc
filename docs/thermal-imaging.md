@@ -2,13 +2,13 @@
 
 ## 1. Project Overview
 
-This project is part of the [Physical Experiment System](./ExperimentSystem_en.md).
+This project is part of the [Physical Experiment System](./experiment-system).
 
 This project aims to provide users with a simple companion software for the infrared thermal imager, supporting real-time transfer and recording of infrared thermal images, as well as visualization analysis and data export of temperature at specific points in the thermal image. It enables convenient use of the infrared thermal imager during experiments to collect temperature data and support subsequent theoretical analysis.
 
 ## 2. Project Highlights
 
-<div style="text-align:center;"><img src="./ThermalImageAnalysisSystem.assets/image-20260407021750202.png" alt="image-20260407021750202" style="width:50%;" /></div>
+<div style="text-align:center;"><img src="./assets/thermal-imaging/image-20260407021750202.png" alt="image-20260407021750202" style="width:50%;" /></div>
 
 This project defines and delivers an extremely streamlined workflow, implementing acquisition, analysis, and export of infrared thermal images through the simplest possible interface. Users can intuitively perform all required operations with zero learning curve.
 

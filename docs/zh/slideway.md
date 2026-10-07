@@ -2,13 +2,13 @@
 
 ## 1. 项目概述
 
-本项目是[物理实验系统](./ExperimentSystem.md)中的一部分。
+本项目是[物理实验系统](./experiment-system)中的一部分。
 
 本项目旨在为普通用户提供一套模块化的网页编程系统，大大降低滑轨编程的难度，使其可以在实际开发中快速便捷的操作滑轨进行初始化，归位，精确移动，设置速度移动等操作。
 
 ## 2. 项目亮点展示
 
-<div style="text-align:center;"><img src="./slideway.assets/image-20251205164505709.png" style="width:100%;" /></div>
+<div style="text-align:center;"><img src="../assets/slideway/image-20251205164505709.png" style="width:100%;" /></div>
 
 本项目提供了一整套系统的图形化编程环境，包含模块化编程区域，自动代码生成区（供高级用户调试和检查），以及运行结果区。提供滑轨状态实时监控和代码调试功能，同时支持项目的保存和导入。
 
@@ -64,7 +64,7 @@ flowchart TD
 
 ## 8. 用户界面与体验
 
-<div style="text-align:center;"><img src="./slideway.assets/image-20251205165251168.png" style="width:100%;" /></div>
+<div style="text-align:center;"><img src="../assets/slideway/image-20251205165251168.png" style="width:100%;" /></div>
 
 1. 代码块菜单栏，提供基础的逻辑，循环，数学运算，字符串运算，变量，函数以及滑轨控制功能。
 2. 模块化编程区域，用户通过从菜单栏中拖拽模块进行组合排列进行编程。

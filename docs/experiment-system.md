@@ -66,7 +66,7 @@ In Dr. Lukas's doctoral research, it is necessary to study the effects of differ
 
 **2D Schematic Diagram**:
 
-<div style="text-align:center;"><img src="./ExperimentSystem.assets/system.png" style="width:50%;" /></div>
+<div style="text-align:center;"><img src="./assets/experiment-system/system.png" style="width:50%;" /></div>
 
 ## 6. Project Showcase
 
@@ -74,27 +74,27 @@ Due to copyright considerations, this section only showcases software or hardwar
 
 ### Industrial Control Computer System
 
-<div style="text-align:center;"><img src="./ExperimentSystem.assets/image-20251206202253490.png" alt="image-20251206202253490" style="width:50%;" /></div>
+<div style="text-align:center;"><img src="./assets/experiment-system/image-20251206202253490.png" alt="image-20251206202253490" style="width:50%;" /></div>
 
-A complete integrated experiment and processing system. Includes all host software and required data analysis tools, with shortcuts to common system management utilities. At the OS level, Windows 10 Enterprise 2021 LTSC is used, deeply optimized via scripts — system updates and other services are disabled to ensure a stable, unchanging environment. See: [Industrial Control Computer System](./IndustrialControlComputerSystem_en.md).
+A complete integrated experiment and processing system. Includes all host software and required data analysis tools, with shortcuts to common system management utilities. At the OS level, Windows 10 Enterprise 2021 LTSC is used, deeply optimized via scripts — system updates and other services are disabled to ensure a stable, unchanging environment. See: [Industrial Control Computer System](./industrial-computer).
 
 ### 2D Slideway Modular Programming Control System
 
-<div style="text-align:center;"><img src="./ExperimentSystem.assets/image-20251205164505709.png" alt="image-20251205164505709" style="width:50%;" /></div>
+<div style="text-align:center;"><img src="./assets/experiment-system/image-20251205164505709.png" alt="image-20251205164505709" style="width:50%;" /></div>
 
-A zero-learning-curve modular programming system. Supports console output, loop statements, conditional statements, variables and functions, as well as slideway operations including initialization, homing, precise movement, and speed-based movement. See: [2D Slideway Modular Programming Control System](./SlidewayControlSystem_en.md).
+A zero-learning-curve modular programming system. Supports console output, loop statements, conditional statements, variables and functions, as well as slideway operations including initialization, homing, precise movement, and speed-based movement. See: [2D Slideway Modular Programming Control System](./slideway).
 
 ### Infrared Thermal Image Real-Time Transfer and Analysis System
 
-<div style="text-align:center;"><img src="./ThermalImageAnalysisSystem.assets/image-20260407021750202.png" alt="image-20260407021750202" style="width:50%;" /></div>
+<div style="text-align:center;"><img src="./assets/thermal-imaging/image-20260407021750202.png" alt="image-20260407021750202" style="width:50%;" /></div>
 
-A streamlined and easy-to-use infrared thermal imaging software. Supports real-time transfer and recording of infrared thermal video from the device, video analysis to extract temperature values at the center point and three user-defined points per frame, and saving of both video and analysis results. See: [Infrared Thermal Image Real-Time Transfer and Analysis System](./ThermalImageAnalysisSystem_en.md).
+A streamlined and easy-to-use infrared thermal imaging software. Supports real-time transfer and recording of infrared thermal video from the device, video analysis to extract temperature values at the center point and three user-defined points per frame, and saving of both video and analysis results. See: [Infrared Thermal Image Real-Time Transfer and Analysis System](./thermal-imaging).
 
 ### Dial Indicator Real-Time Data Acquisition and Recording System
 
-<div style="text-align:center;"><img src="./ExperimentSystem.assets/image-20260407015618822.png" style="width:50%;" /></div>
+<div style="text-align:center;"><img src="./assets/experiment-system/image-20260407015618822.png" style="width:50%;" /></div>
 
-A powerful dial indicator data reading software with all the features required for experiments. Supports automatic baud rate detection and matching, dynamic data reading with real-time chart display, and data export. See: [Dial Indicator Real-Time Data Acquisition and Recording System](./DialIndicatorSystem_en.md).
+A powerful dial indicator data reading software with all the features required for experiments. Supports automatic baud rate detection and matching, dynamic data reading with real-time chart display, and data export. See: [Dial Indicator Real-Time Data Acquisition and Recording System](./dial-indicator).
 
 ## 7. Overall Implementation and Design Challenges
 
@@ -124,22 +124,22 @@ To date, this project has been formally deployed and in operation in the experim
 
 ## 10. Development Gallery
 
-<div style="text-align:center;"><img src="./ExperimentSystem.assets/image-20251207175325077.png" alt="image-20251207175325077" style="width:33%;" /></div>
+<div style="text-align:center;"><img src="./assets/experiment-system/image-20251207175325077.png" alt="image-20251207175325077" style="width:33%;" /></div>
 
 <center>It's always a mess at the beginning $#&</center>
 <br />
 
-<div style="text-align:center;"><img src="./ExperimentSystem.assets/71074a0ef4a581ed09c7efd27ff8b435.jpg" alt="71074a0ef4a581ed09c7efd27ff8b435" style="width:25%;" /></div>
+<div style="text-align:center;"><img src="./assets/experiment-system/71074a0ef4a581ed09c7efd27ff8b435.jpg" alt="71074a0ef4a581ed09c7efd27ff8b435" style="width:25%;" /></div>
 
 <center>This hardware doesn't look open-source...</center>
 <br />
 
-<div style="text-align:center;"><img src="./ExperimentSystem.assets/image-20251207175453683.png" alt="image-20251207175453683" style="width:33%;" /></div>
+<div style="text-align:center;"><img src="./assets/experiment-system/image-20251207175453683.png" alt="image-20251207175453683" style="width:33%;" /></div>
 
 <center>Taking a break — might as well listen to some music while installing the OS</center>
 <br />
 
-<div style="text-align:center;"><img src="./ExperimentSystem.assets/dcf64484a6c90d2b0af9f955a0745be8.jpg" alt="dcf64484a6c90d2b0af9f955a0745be8" style="width:33%;" /></div>
+<div style="text-align:center;"><img src="./assets/experiment-system/dcf64484a6c90d2b0af9f955a0745be8.jpg" alt="dcf64484a6c90d2b0af9f955a0745be8" style="width:33%;" /></div>
 
 <center>Glasses or sunglasses?</center>
 <br />

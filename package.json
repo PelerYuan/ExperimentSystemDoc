@@ -1,0 +1,27 @@
+{
+  "name": "experiment-system-doc",
+  "version": "1.0.0",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PelerYuan/ExperimentSystemDoc.git"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/PelerYuan/ExperimentSystemDoc/issues"
+  },
+  "homepage": "https://github.com/PelerYuan/ExperimentSystemDoc#readme",
+  "devDependencies": {
+    "mermaid": "^11.17.2",
+    "vitepress": "^1.6.4",
+    "vitepress-plugin-mermaid": "^2.0.17"
+  },
+  "private": true
+}

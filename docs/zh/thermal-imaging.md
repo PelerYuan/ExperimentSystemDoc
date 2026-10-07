@@ -2,13 +2,13 @@
 
 ## 1. 项目概述
 
-本项目是[物理实验系统](./ExperimentSystem.md)中的一部分。
+本项目是[物理实验系统](./experiment-system)中的一部分。
 
 本项目旨在为用户提供一套简易的红外温感配套软件，支持红外热图的实时传输与记录，以及热图特定点温度的可视化分析与数据导出，使其可以在实验中便捷的使用红外温感装置采集温度数据，为后续的理论分析提供支持。
 
 ## 2. 项目亮点展示
 
-<div style="text-align:center;"><img src="./ThermalImageAnalysisSystem.assets/image-20260407021750202.png" alt="image-20260407021750202" style="width:50%;" /></div>
+<div style="text-align:center;"><img src="../assets/thermal-imaging/image-20260407021750202.png" alt="image-20260407021750202" style="width:50%;" /></div>
 
 本项目定义并提供了一套极度简化工作流，以最简便的界面实现对红外热图的采集，分析与导出。用户无需任何学习成本便可以一目了然的使用软件进行所需的全部操作。
 

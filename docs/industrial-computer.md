@@ -2,7 +2,7 @@
 
 ## 1. Project Overview
 
-This project is part of the [Physical Experiment System](./ExperimentSystem_en.md).
+This project is part of the [Physical Experiment System](./experiment-system).
 
 This project aims to provide experimenters with a comprehensive hardware and software solution that connects and controls all hardware in the physical experiment system, enabling one-stop operation, monitoring, data acquisition, and analysis of experimental equipment.
 

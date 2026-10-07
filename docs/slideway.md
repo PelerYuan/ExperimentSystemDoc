@@ -2,13 +2,13 @@
 
 ## 1. Project Overview
 
-This project is part of the [Physical Experiment System](./ExperimentSystem_en.md).
+This project is part of the [Physical Experiment System](./experiment-system).
 
 This project aims to provide general users with a modular web-based programming system that greatly reduces the complexity of slideway programming, enabling users to quickly and conveniently perform slideway operations — including initialization, homing, precise movement, and speed-based movement — in actual experimental workflows.
 
 ## 2. Project Highlights
 
-<div style="text-align:center;"><img src="./slideway.assets/image-20251205164505709.png" style="width:100%;" /></div>
+<div style="text-align:center;"><img src="./assets/slideway/image-20251205164505709.png" style="width:100%;" /></div>
 
 This project provides a complete graphical programming environment, including a modular programming area, an auto-generated code panel (for advanced users to debug and inspect), and a run output area. It offers real-time slideway status monitoring and code debugging capabilities, along with project save and import support.
 
@@ -64,7 +64,7 @@ flowchart TD
 
 ## 8. User Interface and Experience
 
-<div style="text-align:center;"><img src="./slideway.assets/image-20251205165251168.png" style="width:100%;" /></div>
+<div style="text-align:center;"><img src="./assets/slideway/image-20251205165251168.png" style="width:100%;" /></div>
 
 1. Code block menu bar — provides basic logic, loops, math operations, string operations, variables, functions, and slideway control blocks.
 2. Modular programming area — users program by dragging and combining blocks from the menu bar.
