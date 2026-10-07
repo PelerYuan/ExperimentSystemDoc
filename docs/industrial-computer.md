@@ -27,8 +27,8 @@ The revised design therefore added an industrial control computer, giving a stab
 **Non-functional**
 
 - A case of suitable size; it sits on the workbench to keep dust out, so its size is tightly limited
-- A tight budget
-- Cooling and other stability factors that allow 24/7 operation
+- Low cost, within a tight budget
+- Cooling and other stability measures that allow 24/7 operation
 
 ## Development Workflow
 

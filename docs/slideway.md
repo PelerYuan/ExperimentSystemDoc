@@ -29,7 +29,7 @@ The physical experiment system machines wood on a drilling platform and needs op
 
 **Non-functional**
 
-- Interference resistance when communicating with the motor controller
+- Resistance to interference when communicating with the motor controller
 - Limit protection for the slideway motors
 - Long-term operation in a high-vibration, high-dust environment
 

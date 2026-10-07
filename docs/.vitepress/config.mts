@@ -27,7 +27,7 @@ export default withMermaid(
         label: 'English',
         lang: 'en-US',
         description:
-          'An integrated wood-processing and data-acquisition platform for physics research: drilling rig, 2D slideway, force/torque, thermal imaging and displacement sensing.',
+          'An integrated wood-drilling and data-acquisition system for physics research, combining a drilling rig, a 2D slideway, pressure and torque sensors, thermal imaging and displacement measurement.',
         themeConfig: {
           nav: [
             { text: 'Overview', link: '/experiment-system' },
@@ -47,7 +47,7 @@ export default withMermaid(
         label: '中文',
         lang: 'zh-CN',
         link: '/zh/',
-        description: '面向物理实验的木材加工与数据采集一体化平台：钻机、二维滑轨、压力/扭矩、红外热成像与位移测量。',
+        description: '面向物理实验的木材加工与数据采集一体化系统，集成钻机、二维滑轨、压力与扭矩传感器、红外热成像和位移测量。',
         themeConfig: {
           nav: [
             { text: '系统总览', link: '/zh/experiment-system' },

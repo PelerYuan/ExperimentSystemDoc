@@ -6,16 +6,16 @@ const { lang } = useData()
 const items = computed(() =>
   lang.value.startsWith('zh')
     ? [
-        { n: '7', label: '集成于同一工位的设备与机械' },
-        { n: '4', label: '自主开发的软件系统' },
+        { n: '7', label: '个部件组成完整的实验系统' },
+        { n: '4', label: '套自主开发的软件系统' },
         { n: '8', sup: '+', label: '个月的实际部署运行' },
-        { n: '100', sup: '+', label: '场实验样本加工与数据记录' },
+        { n: '100', sup: '+', label: '场实验的样本加工与数据记录' },
       ]
     : [
-        { n: '7', label: 'Instruments and machines on one workstation' },
-        { n: '4', label: 'Custom software systems' },
+        { n: '7', label: 'Components in the complete system' },
+        { n: '4', label: 'Custom software systems built' },
         { n: '8', sup: '+', label: 'Months in service' },
-        { n: '100', sup: '+', label: 'Sample-processing sessions recorded' },
+        { n: '100', sup: '+', label: 'Experiment sessions processed and recorded' },
       ],
 )
 </script>

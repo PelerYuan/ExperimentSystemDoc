@@ -8,7 +8,7 @@
 | **Client** | Dr. Lukas's doctoral research on how wood-processing methods affect structural stability |
 | **Components** | Industrial control computer, drilling platform, 2D slideway, pressure sensors, torque sensor, infrared thermal imager, dial indicator |
 | **Status** | In service for over 8 months, supporting over 100 sample-processing and data-recording sessions |
-| **Role** | Apart from some hardware procurement, system design, software development, installation, commissioning and maintenance were all carried out by Peler |
+| **Developer** | Peler, who carried out the system design, software development, installation, commissioning and maintenance, apart from some hardware procurement |
 
 ## Design Goals
 

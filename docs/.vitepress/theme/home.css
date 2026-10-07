@@ -101,3 +101,7 @@
 .VPFeature:hover .link-text { color: var(--vp-c-brand-1); }
 .VPFeature .link-text-icon { transition: transform 0.3s var(--ease-out); }
 .VPFeature:hover .link-text-icon { transform: translateX(3px); }
+
+/* Balanced line breaks so Chinese and English headings never strand a word */
+html:lang(en-US) .VPHero .text { text-wrap: balance; }
+.VPHero .tagline, .VPFeature .details { text-wrap: pretty; }

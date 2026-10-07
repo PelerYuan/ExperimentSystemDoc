@@ -4,8 +4,8 @@ title: Experiment System
 
 hero:
   name: Physical Experiment System
-  text: Machining and measurement, in one workstation
-  tagline: A drilling rig, a 2D slideway and four sensor channels, unified under one industrial PC for a doctoral wood-mechanics study. Designed, built and maintained from the ground up.
+  text: One workstation for drilling and data acquisition
+  tagline: Built for a doctoral study of wood structural stability. A drilling rig, a 2D slideway and four kinds of sensor, all run from one industrial PC. Designed, built and maintained from the ground up.
   actions:
     - theme: brand
       text: System Overview
@@ -15,24 +15,20 @@ hero:
       link: /slideway
 
 features:
-  - icon: 🖥️
-    title: Industrial Control Computer
-    details: One LTSC workstation that runs every instrument, hardened for a dusty, vibrating workshop.
+  - title: Industrial Control Computer
+    details: One industrial PC connects to and controls every device, tuned to run reliably in a workshop environment.
     link: /industrial-computer
     linkText: Read more
-  - icon: 🧩
-    title: 2D Slideway Programming
-    details: A block-based web IDE, built on Blockly, that lets non-programmers drive a two-axis motor stage precisely.
+  - title: 2D Slideway Programming
+    details: A block-based web environment built on Blockly, so people who do not program can still control the 2D slideway precisely.
     link: /slideway
     linkText: Read more
-  - icon: 🌡️
-    title: Thermal Image Analysis
-    details: Live thermal video over USB, H.264 recording and per-frame temperature extraction, with no vendor software.
+  - title: Thermal Image Analysis
+    details: Streams thermal images over USB, records them as H.264 video and extracts the temperature at chosen points frame by frame, with no vendor software.
     link: /thermal-imaging
     linkText: Read more
-  - icon: 📏
-    title: Dial Indicator Acquisition
-    details: A PyQt5 Modbus RTU client with baud-rate auto-detection, real-time plotting and CSV/Excel/SQLite export.
+  - title: Dial Indicator Acquisition
+    details: A PyQt5 host application for Modbus RTU, with baud-rate auto-detection, live plotting and CSV / Excel / SQLite export.
     link: /dial-indicator
     linkText: Read more
 ---
