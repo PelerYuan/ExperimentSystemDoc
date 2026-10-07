@@ -7,7 +7,7 @@
 | **Purpose** | Drill wood samples while recording the pressure, torque, temperature and displacement produced during machining |
 | **Client** | Dr. Lukas's doctoral research on how wood-processing methods affect structural stability |
 | **Components** | Industrial control computer, drilling platform, 2D slideway, pressure sensors, torque sensor, infrared thermal imager, dial indicator |
-| **Status** | In service for over four months, supporting dozens of sample-processing and data-recording sessions |
+| **Status** | In service for over 8 months, supporting over 100 sample-processing and data-recording sessions |
 | **Role** | Apart from some hardware procurement, system design, software development, installation, commissioning and maintenance were all carried out by Peler |
 
 ## Design Goals
@@ -97,7 +97,7 @@ Detects and matches the baud rate automatically, reads data continuously and plo
 
 ## Project Outcomes
 
-The system has been formally deployed in the experimental environment for over four months and has supported dozens of sample-processing and data-recording sessions. The most recent inspection, after three months of continuous use, found no faults or latent hazards: all components were working properly and had coped with the high-vibration, high-dust environment.
+The system has been formally deployed in the experimental environment for over 8 months and has supported over 100 sample-processing and data-recording sessions. The most recent inspection, after three months of continuous use, found no faults or latent hazards: all components were working properly and had coped with the high-vibration, high-dust environment.
 
 ## Personal Contributions
 
